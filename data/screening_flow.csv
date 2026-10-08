@@ -1,0 +1,11 @@
+stage,n
+identified_targeted_title_search,87892
+retrieved_top60_per_field,1080
+duplicates_removed,103
+screened_scripted_title_rules,977
+excluded_scripted,485
+assessed_manually,492
+excluded_manual,395
+included_from_screening,97
+added_by_curation,278
+total_sources,375

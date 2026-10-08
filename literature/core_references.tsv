@@ -1,0 +1,376 @@
+key	doi	expect	theme
+hurlbert1984	10.2307/1942661	pseudoreplication	principles
+lazic2010	10.1186/1471-2202-11-5	pseudoreplication	neuroscience
+lazic2018	10.1371/journal.pbio.2005282	what exactly	principles
+button2013	10.1038/nrn3475	power failure	neuroscience
+ioannidis2005	10.1371/journal.pmed.0020124	most published	reproducibility
+begley2012	10.1038/483531a	raise standards	reproducibility
+prinz2011	10.1038/nrd3439-c1	believe it or not	reproducibility
+baker2016	10.1038/533452a	reproducibility	reproducibility
+kilkenny2010	10.1371/journal.pbio.1000412	ARRIVE	reporting
+percie2020	10.1371/journal.pbio.3000410	ARRIVE	reporting
+landis2012	10.1038/nature11556	transparent reporting	reporting
+leek2010	10.1038/nrg2825	batch effects	omics
+johnson2007	10.1093/biostatistics/kxj037	batch effects	omics
+churchill2002	10.1038/ng1031	microarray	omics
+kerr2001	10.1093/biostatistics/2.2.183	microarray	omics
+auer2010	10.1534/genetics.110.114983	RNA sequencing	omics
+conesa2016	10.1186/s13059-016-0881-8	RNA-seq	omics
+schurch2016	10.1261/rna.053959.115	biological replicates	omics
+love2014	10.1186/s13059-014-0550-8	DESeq2	omics
+robinson2010	10.1093/bioinformatics/btp616	edgeR	omics
+ritchie2015	10.1093/nar/gkv007	limma	omics
+bh1995	10.1111/j.2517-6161.1995.tb02031.x	false discovery rate	statistics
+storey2003	10.1073/pnas.1530509100	genomewide	statistics
+squair2021	10.1038/s41467-021-25960-2	single-cell	omics
+luecken2019	10.15252/msb.20188746	single-cell	omics
+barangale2018	10.1093/bfgp/elx035	single-cell	omics
+hicks2018	10.1093/biostatistics/kxx053	single-cell	omics
+tung2017	10.1038/srep39921	single-cell	omics
+visscher2017	10.1016/j.ajhg.2017.06.005	GWAS	genetics
+price2006	10.1038/ng1847	principal components	genetics
+marees2018	10.1002/mpr.1608	genome-wide association	genetics
+uffelmann2021	10.1038/s43586-021-00056-9	genome-wide association	genetics
+daveysmith2003	10.1093/ije/dyg070	Mendelian randomization	genetics
+sanderson2022	10.1038/s43586-021-00092-5	Mendelian randomization	genetics
+meuwissen2001	10.1093/genetics/157.4.1819	genome-wide dense marker	breeding
+gilmour1997	10.2307/1400446	natural and extraneous	breeding
+cullis2006	10.1198/108571106X154443	early generation	breeding
+boxwilson1951	10.1111/j.2517-6161.1951.tb00067.x	optimum conditions	optimization
+plackett1946	10.1093/biomet/33.4.305	multifactorial	optimization
+weissman2015	10.1021/op500169m	design of experiments	pharmacy
+politis2017	10.1080/03639045.2017.1291672	design of experiments	pharmacy
+yu2014	10.1208/s12248-014-9598-3	quality by design	pharmacy
+mandenius2008	10.1002/btpr.67	bioprocess	biotech
+kumar2014	10.1002/btpr.1821	bioprocess	biotech
+zhang1999	10.1177/108705719900400206	statistical parameter	screening
+malo2006	10.1038/nbt1186	high-throughput screening	screening
+birmingham2009	10.1038/nmeth.1351	RNA interference	screening
+li2014mageck	10.1186/s13059-014-0554-4	MAGeCK	screening
+doench2018	10.1038/nrg.2017.97	CRISPR	screening
+bustin2009	10.1373/clinchem.2008.112797	MIQE	molbio
+vandesompele2002	10.1186/gb-2002-3-7-research0034	normalization	molbio
+livak2001	10.1006/meth.2001.1262	2-ΔΔCT	molbio
+vaux2012	10.1038/embor.2012.36	replicates	principles
+cumming2007	10.1083/jcb.200611141	error bars	principles
+blainey2014	10.1038/nmeth.3091	replication	principles
+krzywinski2014design	10.1038/nmeth.2974	comparative experiments	principles
+krzywinski2013power	10.1038/nmeth.2738	power	principles
+krzywinski2014blocking	10.1038/nmeth.3005	blocking	principles
+salter2014	10.1186/s12915-014-0087-z	reagent	microbiology
+eisenhofer2019	10.1016/j.tim.2018.11.003	contamination	microbiology
+knight2018	10.1038/s41579-018-0029-9	microbiome	microbiology
+gloor2017	10.3389/fmicb.2017.02224	compositional	microbiology
+mcmurdie2014	10.1371/journal.pcbi.1003531	waste not	microbiology
+weiss2017	10.1186/s40168-017-0237-y	normalization	microbiology
+sinha2017	10.1038/nbt.3981	microbiome	microbiology
+lenski1991	10.1086/285289	long-term	microbiology
+oberg2009	10.1021/pr8010099	proteomic	omics
+aebersold2016	10.1038/nature19949	proteome	omics
+broadhurst2018	10.1007/s11306-018-1367-3	quality	omics
+dunn2011	10.1038/nprot.2011.335	metabolic profiling	omics
+sumner2007	10.1007/s11306-007-0082-2	minimum reporting	omics
+wilkinson2016	10.1038/sdata.2016.18	FAIR	data
+sandve2013	10.1371/journal.pcbi.1003285	reproducible computational	computational
+weber2019	10.1186/s13059-019-1738-8	benchmarking	computational
+boulesteix2013	10.1371/journal.pone.0061562	neutral comparison	computational
+mangul2019	10.1038/s41467-019-09406-4	benchmarking	computational
+varma2006	10.1186/1471-2105-7-91	cross-validation	datascience
+kapoor2023	10.1016/j.patter.2023.100804	leakage	datascience
+walsh2021	10.1038/s41592-021-01205-4	DOME	datascience
+whalen2022	10.1038/s41576-021-00434-9	pitfalls	datascience
+chicco2017	10.1186/s13040-017-0155-3	machine learning	datascience
+collins2015	10.7326/M14-0697	TRIPOD	medical
+collins2024	10.1136/bmj-2023-078378	TRIPOD+AI	medical
+schulz2010	10.1136/bmj.c332	CONSORT	medical
+chan2013	10.1136/bmj.e7586	SPIRIT	medical
+vonelm2007	10.1016/S0140-6736(07)61602-X	STROBE	medical
+bossuyt2015	10.1136/bmj.h5527	STARD	medical
+hernan2016	10.1093/aje/kwv254	target trial	medical
+thorlund2018	10.1136/bmj.k698	adaptive clinical trials	medical
+woodcock2017	10.1056/NEJMra1510062	master protocols	medical
+julious2005	10.1002/pst.185	pilot	medical
+faul2007	10.3758/BF03193146	G*Power	statistics
+festing2002	10.1093/ilar.43.4.244	laboratory animals	animal
+macleod2015	10.1371/journal.pbio.1002273	risk of bias	animal
+clayton2014	10.1038/509282a	sex	animal
+beery2011	10.1016/j.neubiorev.2010.07.002	sex bias	neuroscience
+voelkl2018	10.1371/journal.pbio.2003693	heterogeneity	animal
+richter2009	10.1038/nmeth.1312	standardization	animal
+eklund2016	10.1073/pnas.1602413113	cluster failure	neuroscience
+poldrack2017	10.1038/nrn.2016.167	scanning the horizon	neuroscience
+marek2022	10.1038/s41586-022-04492-9	brain-wide association	neuroscience
+kriegeskorte2009	10.1038/nn.2303	circular analysis	neuroscience
+nieuwenhuis2011	10.1038/nn.2886	interactions	neuroscience
+aarts2014	10.1038/nn.3648	dependency	neuroscience
+nosek2018	10.1073/pnas.1708274114	preregistration	reproducibility
+munafo2017	10.1038/s41562-016-0021	manifesto	reproducibility
+simmons2011	10.1177/0956797611417632	false-positive	reproducibility
+wasserstein2016	10.1080/00031305.2016.1154108	ASA Statement	statistics
+halsey2015	10.1038/nmeth.3288	fickle	statistics
+errington2021	10.7554/eLife.71601	replicability	reproducibility
+osc2015	10.1126/science.aac4716	reproducibility of psychological	reproducibility
+bates2015	10.18637/jss.v067.i01	lme4	statistics
+rubin1974	10.1037/h0037350	causal effects	causal
+pearl2009	10.1214/09-SS057	causal inference	causal
+lakens2022	10.1525/collabra.33267	sample size justification	statistics
+altman1995	10.1136/bmj.311.7003.485	absence of evidence	statistics
+bland1986	10.1016/S0140-6736(86)90837-8	agreement	statistics
+shalem2014	10.1126/science.1247005	CRISPR-Cas9 knockout	screening
+dixit2016	10.1016/j.cell.2016.11.038	Perturb-Seq	screening
+hart2015	10.1016/j.cell.2015.11.015	CRISPR screens	screening
+sims2014	10.1038/nrg3642	sequencing depth	omics
+ching2014	10.1261/rna.046011.114	power analysis	omics
+hansen2011	10.1038/nbt.1910	biological variability	omics
+liu2014	10.1093/bioinformatics/btt688	more sequence	omics
+argelaguet2018	10.15252/msb.20178124	multi-omics factor	omics
+hasin2017	10.1186/s13059-017-1215-1	multi-omics	omics
+ziemann2016	10.1186/s13059-016-1044-7	gene name errors	computational
+lander1989	10.1093/genetics/121.1.185	mendelian factors	genetics
+mackay2009	10.1038/nrg2612	quantitative traits	genetics
+cavanagh2008	10.1016/j.pbi.2008.01.002	MAGIC	breeding
+yu2006	10.1038/ng1702	mixed-model	genetics
+crossa2017	10.1016/j.tplants.2017.08.011	genomic selection	breeding
+hayes2009	10.3168/jds.2008-1646	dairy	breeding
+araus2014	10.1016/j.tplants.2013.09.008	phenotyping	breeding
+henderson1975	10.2307/2529430	best linear unbiased	breeding
+curtis2018	10.1111/bph.14153	experimental design	pharmacy
+johnson2011	10.1021/bi201284u	Michaelis	biochemistry
+tipton2014	10.1016/j.pisc.2014.02.012	STRENDA	biochemistry
+lee2018	10.1091/mbc.E17-05-0276	fluorescence imaging	molbio
+pillaikastoori2020	10.1016/j.ab.2020.113608	western	molbio
+horbach2017	10.1371/journal.pone.0186281	cell line	molbio
+freedman2015	10.1371/journal.pbio.1002165	economics	reproducibility
+landt2012	10.1101/gr.136184.111	ChIP-seq	omics
+moses2022	10.1038/s41592-022-01409-2	spatial transcriptomics	omics
+page2021	10.1136/bmj.n71	PRISMA	reporting
+morris2019	10.1002/sim.8086	simulation studies	computational
+noble2009	10.1371/journal.pcbi.1000424	organizing	computational
+yang2019	10.1038/s41592-019-0496-6	directed evolution	biotech
+mead2012	10.1017/CBO9781139020879	design of experiments	books
+lazic2016	10.1017/9781139696647	laboratory biologists	books
+pallmann2018	10.1186/s12916-018-1017-7	adaptive designs	medical
+schulz2002	10.1016/s0140-6736(02)07750-4	allocation concealment	medical
+smucker2019	10.1038/s41592-019-0335-9	factorial	principles
+altman2015split	10.1038/nmeth.3293	split plot	principles
+smucker2018optimal	10.1038/s41592-018-0083-2	optimal experimental design	principles
+gelman2014	10.1177/1745691614551642	beyond power	statistics
+senn2004	10.1002/sim.2074	randomization	medical
+kohavi2020	10.1017/9781108653985	online controlled	datascience
+piepho2006	10.1111/j.1439-0523.2006.01267.x	lattice	breeding
+ruxton2016	10.1093/hesc/9780198717355.001.0001	experimental design	books
+sena2010	10.1371/journal.pbio.1000344	publication bias	animal
+steward2014	10.1016/j.neuron.2014.10.042	rigor	neuroscience
+huber2015	10.1038/nmeth.3252	bioconductor	computational
+hopewell2025	10.1136/bmj-2024-081123	CONSORT	medical
+ryan2016	10.1111/insr.12107	Bayesian	principles
+kass2016	10.1371/journal.pcbi.1004961	statistical practice	statistics
+bock2022	10.1038/s43586-021-00093-4	CRISPR	screening
+barjoseph2012	10.1038/nrg3244	time-series	omics
+lord2020	10.1083/jcb.202001064	SuperPlots	molbio
+huggett2013	10.1373/clinchem.2013.206375	digital	molbio
+ghasemi2021	10.3390/ijms222312827	Assay	molbio
+seqc2014	10.1038/nbt.2957	comprehensive	omics
+candioti2014	10.1016/j.talanta.2014.01.034	Experimental	biotech
+weusterbotz2000	10.1016/s1389-1723(01)80027-x	Experimental	biotech
+noh2006	10.1002/bit.20803	Experimental	biotech
+keskin2016	10.3109/07388551.2014.973014	Experimental	biotech
+gardossi2010	10.1016/j.tibtech.2010.01.001	Guidelines	biotech
+mobley2013	10.1371/journal.pone.0063221	survey	reproducibility
+bustin2017	10.1111/eci.12801	Talking	molbio
+singh2005	10.1615/critrevtherdrugcarriersyst.v22.i1.20	Optimizing	pharmacy
+mirzayi2021	10.1038/s41591-021-01552-x	Reporting	microbiology
+kim2017	10.1186/s40168-017-0267-5	Optimizing	microbiology
+laukens2016	10.1093/femsre/fuv036	Heterogeneity	microbiology
+kennedy2023	10.1038/s41586-022-05546-8	Questioning	microbiology
+lawson2019	10.1038/s41579-019-0255-9	Common	microbiology
+curtis2022	10.1111/bph.15868	Planning	pharmacy
+gamble2017	10.1001/jama.2017.18556	Guidelines	medical
+huang2007	10.1038/sj.clpt.6100054	interaction	pharmacy
+shebley2018	10.1002/cpt.1013	Physiologically	pharmacy
+daetwyler2013	10.1534/genetics.112.147983	Genomic	breeding
+sargeant2010	10.4315/0362-028x-73.3.579	REFLECT	breeding
+runcie2019	10.1534/g3.119.400598	Pitfalls	breeding
+pavan2020	10.3389/fgene.2020.00447	Recommendations	breeding
+skrivankova2021	10.1001/jama.2021.18236	Strengthening	genetics
+burgess2019	10.12688/wellcomeopenres.15555.3	Guidelines	genetics
+brion2013	10.1093/ije/dyt179	Calculating	genetics
+yang2014	10.1038/ng.2876	Advantages	genetics
+yu2008	10.1534/genetics.107.074245	Genetic	breeding
+richards2015	10.1038/gim.2015.30	Standards	genetics
+burgess2011	10.1093/ije/dyr036	Avoiding	genetics
+peterson2019	10.1016/j.cell.2019.08.051	Genome	genetics
+wray2013	10.1038/nrg3457	Pitfalls	genetics
+sham2014	10.1038/nrg3706	Statistical	genetics
+spencer2009	10.1371/journal.pgen.1000477	Designing	genetics
+luecken2022	10.1038/s41592-021-01336-8	Benchmarking	omics
+haghverdi2018	10.1038/nbt.4091	Batch	omics
+maqc2006	10.1038/nbt1239	MicroArray	omics
+heumos2023	10.1038/s41576-023-00586-w	practices	omics
+simon2003	10.1093/jnci/95.1.14	Pitfalls	omics
+svensson2017	10.1038/nmeth.4220	Power	omics
+dupuy2007	10.1093/jnci/djk018	Critical	omics
+nygaard2016	10.1093/biostatistics/kxv027	Methods	omics
+zimmerman2021	10.1038/s41467-021-21038-1	practical	omics
+hart2013	10.1089/cmb.2012.0283	Calculating	omics
+zhang2020	10.1093/nargab/lqaa078	ComBat	omics
+tran2020	10.1186/s13059-019-1850-9	benchmark	omics
+alseekh2021	10.1038/s41592-021-01197-1	spectrometry	omics
+addona2009	10.1038/nbt.1546	Multi	omics
+collins2017	10.1038/s41467-017-00249-5	Multi	omics
+dunn2012	10.4155/bio.12.204	importance	omics
+nakayasu2021	10.1038/s41596-021-00566-6	Tutorial	omics
+gatto2023	10.1038/s41592-023-01785-3	Initial	omics
+kirwan2022	10.1007/s11306-022-01926-3	Quality	omics
+lu2017	10.1146/annurev-biochem-061516-044952	Metabolite	omics
+uklina2021	10.15252/msb.202110240	Diagnostics	omics
+kreutz2009	10.1111/j.1742-4658.2008.06843.x	Systems	systems
+mallick2017	10.1186/s13059-017-1359-z	Experimental	systems
+graw2021	10.1039/d0mo00041h	Multi	systems
+tiwari2021	10.15252/msb.20209982	Reproducibility	systems
+yu2023	10.1186/s13059-023-03047-z	Correcting	systems
+raue2010	10.1063/1.3528102	Identifiability	systems
+silk2014	10.1371/journal.pcbi.1003650	Model	systems
+chicco2023	10.1371/journal.pcbi.1011224	quick	systems
+steiert2012	10.1371/journal.pone.0040052	Experimental	systems
+hatzis2014	10.1158/0008-5472.can-14-0725	Enhancing	screening
+inglese2007	10.1038/nchembio0807-438	Reporting	screening
+krusche2019	10.1038/s41587-019-0054-x	practices	computational
+ye2019	10.1016/j.cell.2019.07.010	Benchmarking	computational
+vansmeden2019	10.1177/0962280218784726	Sample	datascience
+vabalas2019	10.1371/journal.pone.0224365	Machine	datascience
+luo2016	10.2196/jmir.5870	Guidelines	datascience
+nagendran2020	10.1136/bmj.m689	Artificial	datascience
+heil2021	10.1038/s41592-021-01256-7	Reproducibility	datascience
+beam2020	10.1001/jama.2019.20866	Challenges	datascience
+mcdermott2021	10.1126/scitranslmed.abb1655	Reproducibility	datascience
+hu2023	10.1016/j.neuroimage.2023.120125	Image	datascience
+liu2020	10.1038/s41591-020-1034-x	Reporting	medical
+chan2004	10.1001/jama.291.20.2457	Empirical	medical
+pocock2002	10.1002/sim.1296	Subgroup	medical
+whitehead2016	10.1177/0962280215588241	Estimating	medical
+begley2015	10.1161/circresaha.114.303819	Reproducibility	animal
+kilkenny2009	10.1371/journal.pone.0007824	Survey	animal
+crawley1999	10.1016/s0006-8993(98)01258-x	Behavioral	animal
+holson1992	10.1016/0892-0362(92)90020-b	Principles	animal
+botker2018	10.1007/s00395-018-0696-8	Practical	animal
+dale1999	10.1002/(sici)1097-0193(1999)8:2/3<109::aid-hbm7>3.0.co;2-w	Optimal	neuroscience
+woo2014	10.1016/j.neuroimage.2013.12.058	Cluster	neuroscience
+nichols2017	10.1038/nn.4500	practices	neuroscience
+desmond2002	10.1016/s0165-0270(02)00121-8	Estimating	neuroscience
+yarkoni2009	10.1111/j.1745-6924.2009.01127.x	Correlations	neuroscience
+szucs2020	10.1016/j.neuroimage.2020.117164	Sample	neuroscience
+gross2013	10.1016/j.neuroimage.2012.10.001	practice	neuroscience
+poldrack2008	10.1016/j.neuroimage.2007.11.048	Guidelines	neuroscience
+odea2021	10.1111/brv.12721	Preferred	reporting
+park2016	10.1093/bioinformatics/btw026	general experimental design	omics
+crossley2008	10.1161/strokeaha.107.498725	bias in the design	animal
+patterson1976	10.1093/biomet/63.1.83	resolvable incomplete block	agri
+federer1975	10.2307/2529707	augmented designs	agri
+smith1938	10.1017/s0021859600050516	empirical law	agri
+yates1935	10.2307/2983638	complex experiments	agri
+piepho2003	10.1046/j.1439-037x.2003.00049.x	hitchhiker	agri
+rodriguez2018	10.1016/j.spasta.2017.10.003	p-splines	agri
+murillo2021	10.21105/joss.03122	FielDHub	agri
+kenward1997	10.2307/2533558	small sample inference	agri
+piepho2004	10.1198/1061860043515	letter-based	agri
+smith2005	10.1017/s0021859605005587	cultivar	agri
+mercer1911	10.1017/s002185960000160x	experimental error	agri
+piepho1997	10.2307/2533976	multiplicative	agri
+williams2011	10.1002/bimj.201000102	augmented p-rep	agri
+kuznetsova2017	10.18637/jss.v082.i13	lmerTest	agri
+lenth2016	10.18637/jss.v069.i01	least-squares means	agri
+desplot_cran	10.32614/cran.package.desplot	desplot	software
+agridat_cran	10.32614/cran.package.agridat	agridat	software
+agricolae_cran	10.32614/cran.package.agricolae	agricolae	software
+emmeans_cran	10.32614/cran.package.emmeans	emmeans	software
+laurent2024	10.48550/arXiv.2407.10362	LAB-Bench	aieval
+arora2025	10.48550/arXiv.2505.08775	HealthBench	aieval
+zheng2023	10.48550/arXiv.2306.05685	LLM-as-a-Judge	aieval
+rein2023	10.48550/arXiv.2311.12022	GPQA	aieval
+himes2014	10.1371/journal.pone.0099625	CRISPLD2	omics
+wickham2014	10.18637/jss.v059.i10	tidy data	data
+broman2018	10.1080/00031305.2017.1375989	spreadsheets	data
+lakens2017equivalence	10.1177/1948550617697177	equivalence tests	statistics
+gebeyehu2026	10.1371/journal.pone.0355598	fenugreek	literature-designs
+kumar2026maize	10.3389/fpls.2026.1858657	maize	literature-designs
+makaju2026	10.3389/fpls.2026.1870120	tall fescue	literature-designs
+kovi2026	10.1007/s00122-026-05371-x	timothy	literature-designs
+tao2026	10.3389/fvets.2026.1912675	lysophospholipid	literature-designs
+galloni2026	10.1126/sciadv.aec9522	Arp2/3	literature-designs
+msi2026	10.1111/cas.70521	Musashi	literature-designs
+chen2026refgenes	10.3390/insects17090927	Reference Genes	literature-designs
+vps342026	10.3389/fimmu.2026.1936691	Vps34	literature-designs
+mtb2026	10.1128/aac.01849-25	tuberculosis	literature-designs
+dex2026	10.2147/dddt.s625517	Dexmedetomidine	literature-designs
+baltic2026	10.1001/jamanetworkopen.2026.12759	Barrier Precautions	literature-designs
+blt2026	10.2147/nss.s606007	Bright Light	literature-designs
+ciprofol2026	10.2147/dddt.s604735	Respiratory Depression	literature-designs
+sts2026	10.1111/jcpe.70159	Periodontal	literature-designs
+islet2026	10.1038/s44318-026-00744-w	pancreatic islets	literature-designs
+smelt2026	10.3390/ani16182910	Salt Stress	literature-designs
+fireant2026	10.3390/insects17090971	Fire Ant	literature-designs
+editing2026	10.1007/s44307-026-00123-w	RNA editing	literature-designs
+anoca2026	10.1136/bmjopen-2025-108799	angina	literature-designs
+spider2026	10.1002/ece3.74165	Wolf Spider	literature-designs
+saureus2026	10.7554/elife.107936	virulence	literature-designs
+cardinal2026	10.1038/s41598-026-42507-x	songbird	literature-designs
+puffin2026	10.1098/rsos.252018	seabird	literature-designs
+seagrass2026	10.1128/msphere.00431-26	seagrass	literature-designs
+bwas2026	10.1111/psyp.70365	Brain Association	literature-designs
+sabv2026	10.1186/s13293-025-00788-3	biological variable	literature-designs
+symmetry2026	10.1111/ejn.70608	Symmetry	literature-designs
+cortisol2026	10.1038/s41386-026-02505-z	Cortisol	literature-designs
+pcb2026	10.3389/ftox.2026.1816944	PCB 11	literature-designs
+striatum2026	10.1126/sciadv.aeb5352	striatum	literature-designs
+snr2026	10.1111/epi.18701	substantia nigra	literature-designs
+rtms2026	10.1162/imag.a.1231	transcranial magnetic	literature-designs
+denseeeg2026	10.1162/imag.a.1245	dense sampling	literature-designs
+pvt2026	10.1038/s41467-026-73906-3	learned value	literature-designs
+blocking2026	10.1523/eneuro.0006-26.2026	Blocking	literature-designs
+melanin2026	10.1186/s12934-026-03114-7	eumelanin	literature-designs
+chitinase2026	10.1186/s13068-026-02808-9	chitinase	literature-designs
+eggshell2024	10.1186/s13036-024-00421-8	Eggshell	literature-designs
+schizo2026	10.3390/jof12050321	Schizophyllan	literature-designs
+carotenoid2026	10.1007/s00253-026-13760-x	carotenoid	literature-designs
+lactic2026	10.1038/s41598-026-35828-4	lactic acid	literature-designs
+fabhts2026	10.1007/s00449-026-03379-7	high-throughput screening	literature-designs
+qbdscale2026	10.3390/pharmaceutics18040492	Scale-Up	literature-designs
+gasmeter2026	10.1007/s00449-026-03334-6	gas quantification	literature-designs
+rsmreview2026	10.3390/molecules31173055	Response Surface	literature-designs
+lifecycledoe2024	10.3390/bioengineering11111089	Lifecycle DoE	literature-designs
+vonoprazan2026	10.3389/fphar.2026.1855889	Vonoprazan	literature-designs
+omeprazole2026	10.1186/s40360-026-01203-2	omeprazole	literature-designs
+tamsulosin2026	10.3390/pharmaceutics18081008	Tamsulosin	literature-designs
+timring2026	10.3390/pharmaceutics18040400	Biopharmaceutics	literature-designs
+pantoprazole2026	10.1186/s13065-026-01852-8	pantoprazole	literature-designs
+nirogacestat2026	10.1186/s13065-026-01738-9	nirogacestat	literature-designs
+idarubicin2026	10.1371/journal.pone.0356906	idarubicin	literature-designs
+meropenem2026	10.3390/pharmaceutics18080971	Meropenem	literature-designs
+adre2026	10.1371/journal.pone.0356480	adverse effects	literature-designs
+pharmrx2026	10.1136/bmjopen-2025-112886	pharmacist prescribing	literature-designs
+bsf2026	10.1186/s12711-026-01088-z	black soldier fly	literature-designs
+rabbit2026	10.3390/ani16142192	Litter Size	literature-designs
+disconnect2026	10.1111/jbg.12946	Disconnection	literature-designs
+refset2026	10.3390/ani16030359	Reference Sets	literature-designs
+lacteff2026	10.1186/s12711-025-01013-w	lactation efficiency	literature-designs
+p16ab2026	10.1080/19382014.2026.2706228	antibody validation	literature-designs
+biobank2026	10.1038/s41586-026-10830-y	organoid biobank	literature-designs
+invivocrispr2026	10.1038/s41467-026-76293-x	metastasis suppressors	literature-designs
+kif18a2026	10.1158/2767-9764.crc-26-0560	KIF18A	literature-designs
+aopbattery2026	10.1016/j.namjnl.2026.100110	platin	literature-designs
+obsuk2026	10.1136/bmjopen-2026-118723	Obstetric Bleeding	literature-designs
+sweicc2026	10.1016/j.ccrj.2026.100168	stepped wedge	literature-designs
+adaptive2026	10.1136/bmjopen-2025-115209	non-inferiority	literature-designs
+tte2026	10.1136/bmj-2025-086810	target trial emulation	literature-designs
+vpareview2026	10.3389/fphys.2026.1860596	valproic acid	literature-designs
+quartet2026	10.1038/s41467-026-76380-z	Quartet	literature-designs
+assembly2026	10.1093/bib/bbag267	transcriptome assembly	literature-designs
+lrbench2026	10.1093/nargab/lqag070	benchmark	literature-designs
+plexmaps2026	10.1038/s41597-026-07512-9	nonclinical species	literature-designs
+spatial2026	10.1038/s41586-026-10452-4	spatial ecotypes	literature-designs
+turbine2026	10.1002/ece3.74017	Wind Turbine	literature-designs
+pvremoval2026	10.3390/ani16132063	Photovoltaic	literature-designs
+switchgrass2026	10.1111/nph.70313	switchgrass	literature-designs
+redpanda2026	10.1002/ece3.74208	Red Pandas	literature-designs
+chronoseq2026	10.1111/mec.70552	Restoration Plantings	literature-designs

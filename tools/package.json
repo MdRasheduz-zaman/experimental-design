@@ -1,0 +1,6 @@
+{
+  "name": "course-tools",
+  "private": true,
+  "description": "Renders Mermaid diagram sources to PNG for the course (npm install, then used by scripts/07_build_course.py)",
+  "devDependencies": { "@mermaid-js/mermaid-cli": "^10.9.1" }
+}

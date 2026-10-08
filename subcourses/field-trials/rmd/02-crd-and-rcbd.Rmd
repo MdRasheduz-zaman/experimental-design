@@ -1,0 +1,299 @@
+# Module 2 — From Randomization to Analysis: CRD and RCBD
+
+> **Sub-course: Field Experiments in Agriculture & Plant Breeding**
+> [← Module 1](01-field-heterogeneity.md) · [Sub-course home](README.md) · [Next: Module 3 — Latin Squares and Row–Column Designs →](03-latin-square-and-row-column.md)
+
+---
+
+## 🧭 Learning Objectives
+
+After this module you will be able to:
+
+1. Generate a reproducible **CRD** and **RCBD** layout and field book in R (`agricolae`, `FielDHub`).
+2. Draw the layout with `desplot` and check it before going to the field.
+3. Analyse an RCBD with the model that matches the design, with blocks as fixed or random effects.
+4. Report variety means with `emmeans`, standard errors of differences and compact letter displays — and know their limits.
+
+---
+
+## 🎯 The Big Picture
+
+The completely randomized design (CRD) and the randomized complete block design (RCBD) are
+the workhorses of agricultural research. They are simple, which is exactly why mistakes in
+them are so common: blocks laid out in the wrong direction, randomization done by hand, or
+a correct RCBD analysed as if it were a CRD. This module goes through the whole workflow
+**plan → randomize → map → field book → analyse → report**, using real data.
+
+---
+
+## 🧠 Core Intuition
+
+| | CRD | RCBD |
+|---|---|---|
+| Randomization | treatments over all plots | treatments within each block |
+| Use when | units homogeneous (growth chamber, small uniform area) | known gradient or grouping (field, days, benches) |
+| Model | `y ~ treatment` | `y ~ block + treatment` |
+| Error d.f. (t treatments, r reps) | t(r − 1) | (t − 1)(r − 1) |
+
+The RCBD gives up r − 1 error degrees of freedom in exchange for removing block-to-block
+variation from the error. In a heterogeneous field, that is almost always a good trade
+(Module 1).
+
+---
+
+## 👁️ Visual Intuition — generating and mapping designs
+
+### A CRD and an RCBD with `agricolae`
+
+```{r designs}
+library(agricolae)
+library(desplot)
+trts <- paste0("V", 1:6)
+
+crd  <- design.crd(trt = trts, r = 4, seed = 11, serie = 0)$book
+rcbd <- design.rcbd(trt = trts, r = 4, seed = 11, serie = 0)$book
+names(crd)[3] <- names(rcbd)[3] <- "variety"
+head(rcbd, 8)
+```
+
+`agricolae` returns a **field book** (plot number, block, treatment). To map it we add
+coordinates: here each block is one row of six plots in the field.
+
+```{r coords}
+crd$row  <- rep(1:4, each = 6);  crd$col  <- rep(1:6, times = 4)
+rcbd$row <- as.integer(rcbd$block); rcbd$col <- ave(rcbd$plots, rcbd$block, FUN = seq_along)
+```
+
+```{r maps, fig.height = 3.2, fig.show = "hold", out.width = "49%"}
+desplot(crd, variety ~ col * row, text = variety, cex = 1, show.key = FALSE,
+        main = "CRD: randomized over the whole field")
+desplot(rcbd, variety ~ col * row, out1 = block, text = variety, cex = 1, show.key = FALSE,
+        main = "RCBD: randomized within each block (row)")
+```
+
+**Check the map before sowing:** in the RCBD every block (thick outline) contains each
+variety exactly once; in the CRD some varieties can cluster by chance.
+
+### The same with `FielDHub`
+
+`FielDHub` [@murillo2021] generates designs and field books for many layouts and has an
+interactive Shiny app (`FielDHub::run_app()`).
+
+```{r fieldhub}
+library(FielDHub)
+fh <- RCBD(t = 6, reps = 4, l = 1, plotNumber = 101, seed = 11)
+head(fh$fieldBook)
+```
+
+> **Seeds matter.** Record the seed with the protocol. Anyone can then regenerate exactly
+> your layout, and you can prove the randomization was done before the trial.
+
+---
+
+## 🔬 Worked Example — a strawberry variety trial (real RCBD)
+
+`agridat::mead.strawberry`: 8 strawberry varieties in 4 blocks [@agridat_cran].
+
+```{r strawberry-map, fig.height = 3.4}
+library(agridat)
+m <- mead.strawberry
+desplot(m, yield ~ col * row, out1 = block, text = gen, cex = 1,
+        main = "mead.strawberry: yield, blocks outlined")
+```
+
+### Step 1 — the wrong analysis (ignoring blocks)
+
+```{r wrong}
+fit_crd <- lm(yield ~ gen, data = m)
+anova(fit_crd)
+```
+
+### Step 2 — the analysis that matches the design
+
+```{r right}
+fit_rcbd <- lm(yield ~ block + gen, data = m)
+anova(fit_rcbd)
+```
+
+```{r store, echo = FALSE}
+a1 <- anova(fit_crd); a2 <- anova(fit_rcbd)
+```
+
+Same 32 plots. Ignoring blocks, the residual mean square is
+`r round(a1["Residuals", "Mean Sq"], 2)` and varieties are not significant
+(*p* = `r signif(a1["gen", "Pr(>F)"], 2)`). With blocks it falls to
+`r round(a2["Residuals", "Mean Sq"], 2)`, and the variety effect becomes clear
+(*p* = `r signif(a2["gen", "Pr(>F)"], 2)`). **Blocking only helps if the analysis includes the
+blocks.**
+
+### Step 3 — blocks as random effects
+
+When blocks are a sample of possible field positions, they can be modelled as random
+[@piepho2003]. For a complete-block design the variety test is identical; the difference
+matters for incomplete blocks (Module 5) and for predictions.
+
+```{r mixed}
+library(lme4); library(lmerTest)
+fit_mixed <- lmer(yield ~ gen + (1 | block), data = m)
+anova(fit_mixed, ddf = "Kenward-Roger")
+VarCorr(fit_mixed)
+```
+
+Kenward–Roger degrees of freedom give accurate small-sample tests in mixed models
+[@kenward1997; @kuznetsova2017].
+
+### Step 4 — means, differences and letters
+
+```{r emmeans}
+library(emmeans)
+em <- emmeans(fit_rcbd, ~ gen)
+em
+multcomp::cld(em, Letters = letters, adjust = "tukey")
+```
+
+Estimated marginal means [@lenth2016] are the variety means adjusted for blocks. The letter
+display [@piepho2004] summarizes all pairwise Tukey comparisons: varieties sharing a letter
+are not significantly different.
+
+> **Report more than letters.** Give the means with the **standard error of a difference
+> (SED)** — here `r round(summary(pairs(em))$SE[1], 3)` — or confidence intervals. Letters hide
+> effect sizes and invite reading "not different" as "equal".
+
+---
+
+## ⚠️ Common Misconceptions
+
+| ❌ The misconception | ✅ What is actually true — and what to do |
+|---|---|
+| **"Blocks are just for show."** | If they are in the design, they must be in the model. |
+| **"Random blocks give different variety tests in an RCBD."** | For complete balanced blocks, no. |
+| **"Letters tell the whole story."** | They hide the size of differences and the uncertainty. |
+| **"I'll randomize in the field by eye."** | Generate the layout with software and a recorded seed. |
+| **"One location answers the question."** | It answers it *for that field and season* (Module 8). |
+
+---
+
+## 🧪 Spot the Flaw
+
+> "Six fungicides were tested in an RCBD with 4 blocks. Data were analysed with one-way
+> ANOVA, followed by Tukey tests. Fungicide C was not significantly different from the
+> control, so it is ineffective."
+
+<details>
+<summary>▶ Diagnosis</summary>
+
+1. One-way ANOVA ignores blocks — the analysis doesn't match the design (see the strawberry
+   example).
+2. "Not significantly different" ≠ "ineffective": report the estimated difference and its
+   confidence interval. The trial may simply lack power for realistic effects.
+</details>
+
+---
+
+## 🔎 The Reviewer's Perspective
+
+- **"Show the field map and say how randomization was done (software, seed)."**
+- **"Does the model include every design factor (blocks)?"**
+- **"Are SEDs or CIs reported alongside letters?"**
+
+---
+
+## 🛠️ Design Challenge
+
+Design an RCBD for 10 potato varieties with 4 replicates in a field with a slope running
+east to west. Plots are 3 m × 6 m. Produce the layout and field book in R, and draw it.
+
+<details>
+<summary>▶ Model solution</summary>
+
+```{r challenge, fig.height = 3.6}
+pot <- design.rcbd(trt = paste0("P", 1:10), r = 4, seed = 2026, serie = 2)$book
+names(pot)[3] <- "variety"
+# blocks run north-south (perpendicular to the east-west slope):
+# each block is a column of 10 plots; blocks side by side along the slope
+pot$col <- as.integer(pot$block)
+pot$row <- ave(pot$plots, pot$block, FUN = seq_along)
+desplot(pot, variety ~ col * row, out1 = block, text = variety, cex = 0.9, show.key = FALSE,
+        main = "Potato RCBD: blocks perpendicular to the slope")
+```
+
+Each block occupies one band of the slope, so plots within a block are similar. Export the
+field book with `write.csv(pot, "potato_fieldbook.csv")` and take it to the field.
+</details>
+
+---
+
+## 🧑‍💻 Code-along Exercises
+
+1. Analyse `agridat::rothamsted.oats` (`grain ~ block + trt`). Map it first. How much do blocks matter?
+2. Generate a CRD and an RCBD for 8 treatments × 5 reps with `FielDHub::CRD()` and `FielDHub::RCBD()`; compare their field books.
+3. Compute the relative efficiency of the RCBD versus a CRD for `mead.strawberry` from the two residual mean squares. What does it mean in "number of extra replicates"?
+
+---
+
+## ✅ Check Your Understanding
+
+**⭐ Q1.** How many error degrees of freedom does an RCBD with 8 varieties and 4 blocks have?
+
+**⭐ Q2.** Why record the random seed?
+
+**⭐⭐ Q3.** In the strawberry example, why did the variety *p*-value change so much?
+
+**⭐⭐ Q4.** When would you treat blocks as random?
+
+**⭐⭐⭐ Q5.** A colleague's RCBD layout puts all four replicates of variety V1 in the first
+plot of each block (the field edge). What went wrong, and what is the consequence?
+
+---
+
+## 📝 Sample Answers & Assessment
+
+<details>
+<summary>▶ Show sample answers</summary>
+
+> **Q1 — Sample answer:** *"(8 − 1)(4 − 1) = 21."* — **✔ 10/10.**
+
+> **Q2 — Sample answer:** *"So the layout can be reproduced."* — **✔ 9/10.** Also documents that randomization was genuine and done in advance.
+
+> **Q3 — Sample answer:** *"Block variation was removed from the error."* — **✔ 10/10.** The residual MS fell from `r round(a1["Residuals", "Mean Sq"], 2)` to `r round(a2["Residuals", "Mean Sq"], 2)`.
+
+> **Q4 — Sample answer:** *"When blocks are random samples."* — **◑ 6/10.** More useful: when you want to recover inter-block information (incomplete blocks), predict for new field positions, or combine trials. For complete balanced blocks the variety test is the same either way.
+
+> **Q5 — Sample answer:** *"It wasn't randomized within blocks; V1 is confounded with the edge."* — **✔ 10/10.** Edge effects (borders, light, wheel tracks) are now part of V1's mean.
+
+**Rubric:** full credit links the analysis to the randomization structure.
+</details>
+
+---
+
+## 🧾 Module Summary
+
+| Concept | One-line takeaway |
+|---|---|
+| **Workflow** | Plan → randomize (seeded) → map → field book → analyse → report. |
+| **CRD vs RCBD** | Block when the field or the work has known structure. |
+| **Analysis** | `y ~ block + treatment` (or block random); never drop blocks. |
+| **Reporting** | Means + SED/CIs; letters only as a summary. |
+
+### 📇 Field Design Card — rows for this module
+
+| Field | Your answer |
+|---|---|
+| Design (CRD/RCBD), seed, software | |
+| Field map checked | |
+| Model formula | |
+| Reported quantities (means, SED, CIs) | |
+
+---
+
+## 🔗 Go Deeper
+
+- Main course: [Ch. 4 — Randomization](../../chapters/04-randomization-and-blinding.md) · [Ch. 5 — Blocking](../../chapters/05-blocking-and-batches.md)
+- 📘 Biostat: [Ch. 13 — ANOVA](https://github.com/MdRasheduz-zaman/biostatistics/blob/main/chapters/13-anova.md)
+- Software: [@agricolae_cran; @desplot_cran; @emmeans_cran; @bates2015]
+
+<!-- REFS -->
+
+---
+
+[← Module 1](01-field-heterogeneity.md) · [Sub-course home](README.md) · [Next: Module 3 — Latin Squares and Row–Column Designs →](03-latin-square-and-row-column.md)

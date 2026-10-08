@@ -1,0 +1,469 @@
+field,year,hits
+Molecular & cell biology,2000,137
+Molecular & cell biology,2001,143
+Molecular & cell biology,2002,168
+Molecular & cell biology,2003,181
+Molecular & cell biology,2004,268
+Molecular & cell biology,2005,235
+Molecular & cell biology,2006,246
+Molecular & cell biology,2007,272
+Molecular & cell biology,2008,319
+Molecular & cell biology,2009,366
+Molecular & cell biology,2010,363
+Molecular & cell biology,2011,439
+Molecular & cell biology,2012,402
+Molecular & cell biology,2013,496
+Molecular & cell biology,2014,516
+Molecular & cell biology,2015,555
+Molecular & cell biology,2016,625
+Molecular & cell biology,2017,669
+Molecular & cell biology,2018,671
+Molecular & cell biology,2019,744
+Molecular & cell biology,2020,809
+Molecular & cell biology,2021,898
+Molecular & cell biology,2022,828
+Molecular & cell biology,2023,824
+Molecular & cell biology,2024,1015
+Molecular & cell biology,2025,1443
+Biochemistry & structural biology,2000,13
+Biochemistry & structural biology,2001,18
+Biochemistry & structural biology,2002,19
+Biochemistry & structural biology,2003,22
+Biochemistry & structural biology,2004,20
+Biochemistry & structural biology,2005,23
+Biochemistry & structural biology,2006,20
+Biochemistry & structural biology,2007,25
+Biochemistry & structural biology,2008,19
+Biochemistry & structural biology,2009,33
+Biochemistry & structural biology,2010,31
+Biochemistry & structural biology,2011,28
+Biochemistry & structural biology,2012,33
+Biochemistry & structural biology,2013,41
+Biochemistry & structural biology,2014,37
+Biochemistry & structural biology,2015,37
+Biochemistry & structural biology,2016,44
+Biochemistry & structural biology,2017,55
+Biochemistry & structural biology,2018,54
+Biochemistry & structural biology,2019,34
+Biochemistry & structural biology,2020,69
+Biochemistry & structural biology,2021,69
+Biochemistry & structural biology,2022,73
+Biochemistry & structural biology,2023,63
+Biochemistry & structural biology,2024,67
+Biochemistry & structural biology,2025,90
+Biotechnology & bioprocessing,2000,34
+Biotechnology & bioprocessing,2001,41
+Biotechnology & bioprocessing,2002,35
+Biotechnology & bioprocessing,2003,31
+Biotechnology & bioprocessing,2004,50
+Biotechnology & bioprocessing,2005,68
+Biotechnology & bioprocessing,2006,60
+Biotechnology & bioprocessing,2007,93
+Biotechnology & bioprocessing,2008,101
+Biotechnology & bioprocessing,2009,110
+Biotechnology & bioprocessing,2010,90
+Biotechnology & bioprocessing,2011,130
+Biotechnology & bioprocessing,2012,159
+Biotechnology & bioprocessing,2013,157
+Biotechnology & bioprocessing,2014,148
+Biotechnology & bioprocessing,2015,160
+Biotechnology & bioprocessing,2016,187
+Biotechnology & bioprocessing,2017,217
+Biotechnology & bioprocessing,2018,206
+Biotechnology & bioprocessing,2019,201
+Biotechnology & bioprocessing,2020,245
+Biotechnology & bioprocessing,2021,325
+Biotechnology & bioprocessing,2022,320
+Biotechnology & bioprocessing,2023,330
+Biotechnology & bioprocessing,2024,362
+Biotechnology & bioprocessing,2025,434
+Microbiology & microbiome,2000,107
+Microbiology & microbiome,2001,105
+Microbiology & microbiome,2002,142
+Microbiology & microbiome,2003,151
+Microbiology & microbiome,2004,158
+Microbiology & microbiome,2005,161
+Microbiology & microbiome,2006,179
+Microbiology & microbiome,2007,162
+Microbiology & microbiome,2008,205
+Microbiology & microbiome,2009,172
+Microbiology & microbiome,2010,205
+Microbiology & microbiome,2011,226
+Microbiology & microbiome,2012,228
+Microbiology & microbiome,2013,270
+Microbiology & microbiome,2014,300
+Microbiology & microbiome,2015,325
+Microbiology & microbiome,2016,370
+Microbiology & microbiome,2017,435
+Microbiology & microbiome,2018,509
+Microbiology & microbiome,2019,574
+Microbiology & microbiome,2020,710
+Microbiology & microbiome,2021,827
+Microbiology & microbiome,2022,833
+Microbiology & microbiome,2023,1100
+Microbiology & microbiome,2024,1572
+Microbiology & microbiome,2025,1825
+Pharmacy & pharmacology,2000,106
+Pharmacy & pharmacology,2001,132
+Pharmacy & pharmacology,2002,143
+Pharmacy & pharmacology,2003,179
+Pharmacy & pharmacology,2004,218
+Pharmacy & pharmacology,2005,218
+Pharmacy & pharmacology,2006,190
+Pharmacy & pharmacology,2007,251
+Pharmacy & pharmacology,2008,253
+Pharmacy & pharmacology,2009,261
+Pharmacy & pharmacology,2010,247
+Pharmacy & pharmacology,2011,319
+Pharmacy & pharmacology,2012,289
+Pharmacy & pharmacology,2013,346
+Pharmacy & pharmacology,2014,381
+Pharmacy & pharmacology,2015,374
+Pharmacy & pharmacology,2016,384
+Pharmacy & pharmacology,2017,400
+Pharmacy & pharmacology,2018,412
+Pharmacy & pharmacology,2019,417
+Pharmacy & pharmacology,2020,459
+Pharmacy & pharmacology,2021,591
+Pharmacy & pharmacology,2022,591
+Pharmacy & pharmacology,2023,555
+Pharmacy & pharmacology,2024,707
+Pharmacy & pharmacology,2025,920
+Plant & animal breeding,2000,11
+Plant & animal breeding,2001,14
+Plant & animal breeding,2002,9
+Plant & animal breeding,2003,24
+Plant & animal breeding,2004,20
+Plant & animal breeding,2005,37
+Plant & animal breeding,2006,28
+Plant & animal breeding,2007,31
+Plant & animal breeding,2008,36
+Plant & animal breeding,2009,35
+Plant & animal breeding,2010,46
+Plant & animal breeding,2011,46
+Plant & animal breeding,2012,45
+Plant & animal breeding,2013,64
+Plant & animal breeding,2014,55
+Plant & animal breeding,2015,84
+Plant & animal breeding,2016,79
+Plant & animal breeding,2017,89
+Plant & animal breeding,2018,95
+Plant & animal breeding,2019,113
+Plant & animal breeding,2020,137
+Plant & animal breeding,2021,171
+Plant & animal breeding,2022,139
+Plant & animal breeding,2023,197
+Plant & animal breeding,2024,203
+Plant & animal breeding,2025,302
+Genetics,2000,40
+Genetics,2001,46
+Genetics,2002,49
+Genetics,2003,62
+Genetics,2004,77
+Genetics,2005,125
+Genetics,2006,127
+Genetics,2007,139
+Genetics,2008,173
+Genetics,2009,172
+Genetics,2010,192
+Genetics,2011,182
+Genetics,2012,215
+Genetics,2013,281
+Genetics,2014,323
+Genetics,2015,347
+Genetics,2016,400
+Genetics,2017,528
+Genetics,2018,656
+Genetics,2019,818
+Genetics,2020,1135
+Genetics,2021,1518
+Genetics,2022,1924
+Genetics,2023,3421
+Genetics,2024,7028
+Genetics,2025,7097
+Genomics & epigenomics,2000,8
+Genomics & epigenomics,2001,21
+Genomics & epigenomics,2002,42
+Genomics & epigenomics,2003,42
+Genomics & epigenomics,2004,61
+Genomics & epigenomics,2005,73
+Genomics & epigenomics,2006,92
+Genomics & epigenomics,2007,121
+Genomics & epigenomics,2008,130
+Genomics & epigenomics,2009,178
+Genomics & epigenomics,2010,211
+Genomics & epigenomics,2011,248
+Genomics & epigenomics,2012,299
+Genomics & epigenomics,2013,344
+Genomics & epigenomics,2014,343
+Genomics & epigenomics,2015,380
+Genomics & epigenomics,2016,437
+Genomics & epigenomics,2017,582
+Genomics & epigenomics,2018,654
+Genomics & epigenomics,2019,766
+Genomics & epigenomics,2020,1049
+Genomics & epigenomics,2021,1413
+Genomics & epigenomics,2022,1662
+Genomics & epigenomics,2023,2711
+Genomics & epigenomics,2024,4836
+Genomics & epigenomics,2025,4656
+Transcriptomics (bulk & single-cell),2000,14
+Transcriptomics (bulk & single-cell),2001,43
+Transcriptomics (bulk & single-cell),2002,88
+Transcriptomics (bulk & single-cell),2003,121
+Transcriptomics (bulk & single-cell),2004,160
+Transcriptomics (bulk & single-cell),2005,218
+Transcriptomics (bulk & single-cell),2006,236
+Transcriptomics (bulk & single-cell),2007,239
+Transcriptomics (bulk & single-cell),2008,247
+Transcriptomics (bulk & single-cell),2009,242
+Transcriptomics (bulk & single-cell),2010,209
+Transcriptomics (bulk & single-cell),2011,226
+Transcriptomics (bulk & single-cell),2012,205
+Transcriptomics (bulk & single-cell),2013,277
+Transcriptomics (bulk & single-cell),2014,285
+Transcriptomics (bulk & single-cell),2015,298
+Transcriptomics (bulk & single-cell),2016,300
+Transcriptomics (bulk & single-cell),2017,340
+Transcriptomics (bulk & single-cell),2018,402
+Transcriptomics (bulk & single-cell),2019,452
+Transcriptomics (bulk & single-cell),2020,524
+Transcriptomics (bulk & single-cell),2021,632
+Transcriptomics (bulk & single-cell),2022,631
+Transcriptomics (bulk & single-cell),2023,674
+Transcriptomics (bulk & single-cell),2024,911
+Transcriptomics (bulk & single-cell),2025,1639
+Proteomics & metabolomics,2000,85
+Proteomics & metabolomics,2001,90
+Proteomics & metabolomics,2002,116
+Proteomics & metabolomics,2003,127
+Proteomics & metabolomics,2004,196
+Proteomics & metabolomics,2005,237
+Proteomics & metabolomics,2006,279
+Proteomics & metabolomics,2007,347
+Proteomics & metabolomics,2008,328
+Proteomics & metabolomics,2009,351
+Proteomics & metabolomics,2010,386
+Proteomics & metabolomics,2011,411
+Proteomics & metabolomics,2012,483
+Proteomics & metabolomics,2013,505
+Proteomics & metabolomics,2014,534
+Proteomics & metabolomics,2015,590
+Proteomics & metabolomics,2016,595
+Proteomics & metabolomics,2017,594
+Proteomics & metabolomics,2018,656
+Proteomics & metabolomics,2019,800
+Proteomics & metabolomics,2020,798
+Proteomics & metabolomics,2021,862
+Proteomics & metabolomics,2022,805
+Proteomics & metabolomics,2023,889
+Proteomics & metabolomics,2024,1045
+Proteomics & metabolomics,2025,1453
+Multi-omics & systems biology,2000,0
+Multi-omics & systems biology,2001,0
+Multi-omics & systems biology,2002,0
+Multi-omics & systems biology,2003,2
+Multi-omics & systems biology,2004,5
+Multi-omics & systems biology,2005,6
+Multi-omics & systems biology,2006,4
+Multi-omics & systems biology,2007,16
+Multi-omics & systems biology,2008,13
+Multi-omics & systems biology,2009,21
+Multi-omics & systems biology,2010,27
+Multi-omics & systems biology,2011,16
+Multi-omics & systems biology,2012,22
+Multi-omics & systems biology,2013,24
+Multi-omics & systems biology,2014,24
+Multi-omics & systems biology,2015,32
+Multi-omics & systems biology,2016,36
+Multi-omics & systems biology,2017,32
+Multi-omics & systems biology,2018,40
+Multi-omics & systems biology,2019,52
+Multi-omics & systems biology,2020,66
+Multi-omics & systems biology,2021,105
+Multi-omics & systems biology,2022,113
+Multi-omics & systems biology,2023,151
+Multi-omics & systems biology,2024,275
+Multi-omics & systems biology,2025,785
+Functional genomics screens,2000,4
+Functional genomics screens,2001,1
+Functional genomics screens,2002,6
+Functional genomics screens,2003,14
+Functional genomics screens,2004,5
+Functional genomics screens,2005,10
+Functional genomics screens,2006,13
+Functional genomics screens,2007,10
+Functional genomics screens,2008,13
+Functional genomics screens,2009,25
+Functional genomics screens,2010,14
+Functional genomics screens,2011,24
+Functional genomics screens,2012,20
+Functional genomics screens,2013,19
+Functional genomics screens,2014,28
+Functional genomics screens,2015,26
+Functional genomics screens,2016,35
+Functional genomics screens,2017,35
+Functional genomics screens,2018,28
+Functional genomics screens,2019,44
+Functional genomics screens,2020,32
+Functional genomics screens,2021,26
+Functional genomics screens,2022,31
+Functional genomics screens,2023,44
+Functional genomics screens,2024,37
+Functional genomics screens,2025,83
+Bioinformatics & computational biology,2000,13
+Bioinformatics & computational biology,2001,24
+Bioinformatics & computational biology,2002,31
+Bioinformatics & computational biology,2003,28
+Bioinformatics & computational biology,2004,38
+Bioinformatics & computational biology,2005,56
+Bioinformatics & computational biology,2006,60
+Bioinformatics & computational biology,2007,76
+Bioinformatics & computational biology,2008,84
+Bioinformatics & computational biology,2009,86
+Bioinformatics & computational biology,2010,101
+Bioinformatics & computational biology,2011,101
+Bioinformatics & computational biology,2012,183
+Bioinformatics & computational biology,2013,163
+Bioinformatics & computational biology,2014,160
+Bioinformatics & computational biology,2015,259
+Bioinformatics & computational biology,2016,293
+Bioinformatics & computational biology,2017,363
+Bioinformatics & computational biology,2018,388
+Bioinformatics & computational biology,2019,482
+Bioinformatics & computational biology,2020,542
+Bioinformatics & computational biology,2021,651
+Bioinformatics & computational biology,2022,674
+Bioinformatics & computational biology,2023,660
+Bioinformatics & computational biology,2024,909
+Bioinformatics & computational biology,2025,1398
+"Data science, ML & health informatics",2000,2
+"Data science, ML & health informatics",2001,0
+"Data science, ML & health informatics",2002,8
+"Data science, ML & health informatics",2003,11
+"Data science, ML & health informatics",2004,6
+"Data science, ML & health informatics",2005,10
+"Data science, ML & health informatics",2006,12
+"Data science, ML & health informatics",2007,18
+"Data science, ML & health informatics",2008,19
+"Data science, ML & health informatics",2009,30
+"Data science, ML & health informatics",2010,32
+"Data science, ML & health informatics",2011,46
+"Data science, ML & health informatics",2012,58
+"Data science, ML & health informatics",2013,63
+"Data science, ML & health informatics",2014,72
+"Data science, ML & health informatics",2015,84
+"Data science, ML & health informatics",2016,126
+"Data science, ML & health informatics",2017,171
+"Data science, ML & health informatics",2018,254
+"Data science, ML & health informatics",2019,421
+"Data science, ML & health informatics",2020,669
+"Data science, ML & health informatics",2021,979
+"Data science, ML & health informatics",2022,1176
+"Data science, ML & health informatics",2023,1277
+"Data science, ML & health informatics",2024,1593
+"Data science, ML & health informatics",2025,2715
+Medical & clinical sciences,2000,467
+Medical & clinical sciences,2001,578
+Medical & clinical sciences,2002,725
+Medical & clinical sciences,2003,765
+Medical & clinical sciences,2004,904
+Medical & clinical sciences,2005,986
+Medical & clinical sciences,2006,1112
+Medical & clinical sciences,2007,1282
+Medical & clinical sciences,2008,1377
+Medical & clinical sciences,2009,1581
+Medical & clinical sciences,2010,1809
+Medical & clinical sciences,2011,2062
+Medical & clinical sciences,2012,2457
+Medical & clinical sciences,2013,2852
+Medical & clinical sciences,2014,3152
+Medical & clinical sciences,2015,3403
+Medical & clinical sciences,2016,3580
+Medical & clinical sciences,2017,3941
+Medical & clinical sciences,2018,4293
+Medical & clinical sciences,2019,4659
+Medical & clinical sciences,2020,5709
+Medical & clinical sciences,2021,6715
+Medical & clinical sciences,2022,6679
+Medical & clinical sciences,2023,6642
+Medical & clinical sciences,2024,7148
+Medical & clinical sciences,2025,8257
+Preclinical animal research,2000,122
+Preclinical animal research,2001,167
+Preclinical animal research,2002,210
+Preclinical animal research,2003,284
+Preclinical animal research,2004,346
+Preclinical animal research,2005,393
+Preclinical animal research,2006,412
+Preclinical animal research,2007,432
+Preclinical animal research,2008,474
+Preclinical animal research,2009,478
+Preclinical animal research,2010,460
+Preclinical animal research,2011,501
+Preclinical animal research,2012,506
+Preclinical animal research,2013,602
+Preclinical animal research,2014,626
+Preclinical animal research,2015,670
+Preclinical animal research,2016,709
+Preclinical animal research,2017,828
+Preclinical animal research,2018,803
+Preclinical animal research,2019,856
+Preclinical animal research,2020,895
+Preclinical animal research,2021,1001
+Preclinical animal research,2022,943
+Preclinical animal research,2023,910
+Preclinical animal research,2024,1064
+Preclinical animal research,2025,1554
+Neuroscience,2000,113
+Neuroscience,2001,107
+Neuroscience,2002,130
+Neuroscience,2003,160
+Neuroscience,2004,177
+Neuroscience,2005,167
+Neuroscience,2006,205
+Neuroscience,2007,230
+Neuroscience,2008,269
+Neuroscience,2009,267
+Neuroscience,2010,284
+Neuroscience,2011,346
+Neuroscience,2012,416
+Neuroscience,2013,472
+Neuroscience,2014,515
+Neuroscience,2015,550
+Neuroscience,2016,626
+Neuroscience,2017,678
+Neuroscience,2018,791
+Neuroscience,2019,939
+Neuroscience,2020,1132
+Neuroscience,2021,1243
+Neuroscience,2022,1272
+Neuroscience,2023,1257
+Neuroscience,2024,1410
+Neuroscience,2025,1872
+Ecology & evolution,2000,49
+Ecology & evolution,2001,61
+Ecology & evolution,2002,71
+Ecology & evolution,2003,75
+Ecology & evolution,2004,84
+Ecology & evolution,2005,92
+Ecology & evolution,2006,87
+Ecology & evolution,2007,113
+Ecology & evolution,2008,129
+Ecology & evolution,2009,144
+Ecology & evolution,2010,141
+Ecology & evolution,2011,146
+Ecology & evolution,2012,163
+Ecology & evolution,2013,169
+Ecology & evolution,2014,201
+Ecology & evolution,2015,238
+Ecology & evolution,2016,221
+Ecology & evolution,2017,270
+Ecology & evolution,2018,286
+Ecology & evolution,2019,296
+Ecology & evolution,2020,377
+Ecology & evolution,2021,403
+Ecology & evolution,2022,393
+Ecology & evolution,2023,421
+Ecology & evolution,2024,473
+Ecology & evolution,2025,626

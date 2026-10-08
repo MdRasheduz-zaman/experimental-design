@@ -1,0 +1,74 @@
+# Field Experiments in Agriculture & Plant Breeding — a hands-on sub-course
+
+> Part of [**Designing Experiments in Biology — From Question to Protocol**](../../README.md).
+> The main course teaches design principles for every field; this sub-course goes deep into
+> **agricultural field trials**, with real datasets, real field maps, and R code you can run.
+
+```{r cover, echo = FALSE, fig.height = 3.6}
+library(desplot); library(agridat)
+desplot(yates.oats, gen ~ col * row, out1 = block, out2 = gen, out2.gpar = list(col = "grey35"),
+        text = nitro, shorten = "none", cex = 0.75, show.key = FALSE,
+        main = "Yates's oats (1935): blocks, variety whole plots and nitrogen sub-plots")
+```
+
+---
+
+## Why this sub-course
+
+Agriculture is where randomization, replication and blocking were invented, and field trials
+still pose design problems in their hardest form: heterogeneous fields, hundreds of entries,
+scarce seed, hard-to-change factors and genotype × environment interaction. This sub-course
+teaches the designs and analyses that plant breeders and agronomists actually use, built around
+three excellent R tools:
+
+- [**desplot**](https://kwstat.github.io/desplot/) [@desplot_cran] — maps of field designs and data;
+- [**agridat**](https://kwstat.github.io/agridat/) [@agridat_cran] — hundreds of real agricultural datasets;
+- [**FielDHub**](https://didiermurillof.github.io/FielDHub/) [@murillo2021] and `agricolae` [@agricolae_cran] — generation of designs and field books;
+
+plus `lme4`/`lmerTest` [@bates2015; @kuznetsova2017], `emmeans` [@lenth2016] and `SpATS`
+[@rodriguez2018] for analysis. The approach is inspired by open teaching material such as Paul
+Schmidt's [*Mixed Models for Agriculture in R*](https://github.com/SchmidtPaul/MMFAIR) and
+[*Data Science for Agriculture in R*](https://github.com/SchmidtPaul/dsfair_quarto).
+
+## Who it is for
+
+Students and researchers in agronomy, plant breeding, horticulture, forestry, soil science and
+animal science who will design or analyse field trials. Prerequisites: main course Parts I–II
+(Chapters 1–8) and basic R.
+
+## How each module works
+
+Every module follows the main course rhythm — 🧭 objectives, 🎯 big picture, 🧠 intuition,
+👁️ visual (real field maps), 🔬 worked example, ⚠️ misconceptions, 🧪 spot the flaw,
+🔎 reviewer's perspective, 🛠️ design challenge, ✅ questions, 📝 sample answers, 🧾 summary —
+plus **🧑‍💻 code-along exercises**. Every number in the text is computed by the code shown.
+
+## Modules
+
+| # | Module | Key tools/data |
+|---|---|---|
+| 1 | [Reading the Field: Heterogeneity and Uniformity Trials](01-field-heterogeneity.md) | `mercer.wheat.uniformity`, Smith's law, dummy experiments |
+| 2 | [From Randomization to Analysis: CRD and RCBD](02-crd-and-rcbd.md) | `agricolae`, `FielDHub::RCBD`, `mead.strawberry`, `emmeans` |
+| 3 | [Two Gradients at Once: Latin Squares and Row–Column Designs](03-latin-square-and-row-column.md) | `design.lsd`, `goulden.latin` |
+| 4 | [Factorials, Split-Plots and Strip-Plots](04-factorial-split-strip.md) | `yates.oats`, two error strata |
+| 5 | [Incomplete Blocks: Lattice and α-Designs](05-incomplete-blocks-alpha.md) | `design.alpha`, `john.alpha`, recovery of information |
+| 6 | [Augmented and Partially Replicated Designs](06-augmented-and-prep.md) | `FielDHub::RCBD_augmented`, `partially_replicated`, `kling.augmented` |
+| 7 | [Spatial Analysis](07-spatial-analysis.md) | `SpATS`, `gilmour.slatehall` |
+| 8 | [Multi-Environment Trials and G × E](08-multi-environment-trials.md) | `besag.met`, variance components, locations vs replicates |
+| 9 | [Planning a Field Trial](09-planning-field-trials.md) | power from CV, simulation, field books, data-quality flags |
+| 10 | [Capstone: Design, Simulate, Analyse and Defend](10-capstone.md) | full simulated breeding trial; selection accuracy |
+
+## Setup
+
+```r
+install.packages(c("agridat", "desplot", "agricolae", "FielDHub", "lme4", "lmerTest",
+                   "emmeans", "multcomp", "multcompView", "SpATS"))
+```
+
+## How this sub-course is built
+
+Sources are R Markdown files in [`rmd/`](rmd/). `scripts/08_knit_subcourses.R` runs the code and
+writes the Markdown and figures; `scripts/07_build_course.py` turns `[@key]` citations into
+DOI links. Edit the `.Rmd` files, never the generated `.md`.
+
+<!-- REFS -->

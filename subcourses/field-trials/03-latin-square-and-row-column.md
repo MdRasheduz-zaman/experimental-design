@@ -1,0 +1,283 @@
+# Module 3 — Two Gradients at Once: Latin Squares and Row–Column Designs
+
+> **Sub-course: Field Experiments in Agriculture & Plant Breeding**
+> [← Module 2](02-crd-and-rcbd.md) · [Sub-course home](README.md) · [Next: Module 4 — Factorials, Split-Plots and Strip-Plots →](04-factorial-split-strip.md)
+
+---
+
+## 🧭 Learning Objectives
+
+After this module you will be able to:
+
+1. Explain when **two-way blocking** (rows *and* columns) is worth its cost.
+2. Generate and map a Latin square (`agricolae`, `FielDHub`).
+3. Analyse a Latin square and compare it with one-way blocking using real data.
+4. Recognize resolvable **row–column designs** as the generalization for many entries.
+
+---
+
+## 🎯 The Big Picture
+
+Module 1 showed that fields vary with direction. Often you do not know which direction
+dominates, or variation runs both ways (slope one way, an old hedge the other). A **Latin
+square** blocks in both directions at once: each treatment appears **once in every row and
+once in every column**. Greenhouses (bench × distance from the wall), orchards and
+glasshouse compartments are typical settings.
+
+The price: a t × t Latin square needs exactly t replicates and loses 2(t − 1) degrees of
+freedom to rows and columns. It works best for roughly 4–8 treatments. For more entries,
+**row–column designs** keep the two-way control without requiring a square.
+
+---
+
+## 🧠 Core Intuition
+
+| Design | Controls | Model |
+|---|---|---|
+| RCBD (rows as blocks) | one gradient | `y ~ row + trt` |
+| Latin square | two gradients | `y ~ row + col + trt` |
+| Resolvable row–column | two gradients, many entries, replicates as large blocks | `y ~ rep + trt + (1\|rep:row) + (1\|rep:col)` |
+
+---
+
+## 👁️ Visual Intuition — generating a Latin square
+
+
+```r
+library(agricolae); library(desplot); library(agridat)
+lsd <- design.lsd(trt = LETTERS[1:5], seed = 3, serie = 0)$book
+names(lsd)[4] <- "trt"
+head(lsd)
+```
+
+```
+#>   plots row col trt
+#> 1    11   1   1   D
+#> 2    12   1   2   A
+#> 3    13   1   3   E
+#> 4    14   1   4   C
+#> 5    15   1   5   B
+#> 6    21   2   1   B
+```
+
+
+```r
+desplot(lsd, trt ~ col * row, text = trt, cex = 1.2, show.key = FALSE,
+        main = "5 x 5 Latin square: each letter once per row and column")
+```
+
+<div class="figure" style="text-align: center">
+<img src="figures/03-latin-square-and-row-column-lsd-map-1.png" alt="plot of chunk lsd-map" width="60%" />
+<p class="caption">plot of chunk lsd-map</p>
+</div>
+
+`FielDHub::latin_square()` produces the same kind of design with a field book, and
+`FielDHub::row_column()` builds resolvable row–column designs for larger trials.
+
+---
+
+## 🔬 Worked Example — `goulden.latin`
+
+A 5 × 5 Latin square with 5 treatments ([Wright, 2011](https://doi.org/10.32614/cran.package.agridat)).
+
+
+```r
+g <- goulden.latin
+desplot(g, yield ~ col * row, text = trt, cex = 1.2,
+        main = "goulden.latin: yield, treatment letters")
+```
+
+<div class="figure" style="text-align: center">
+<img src="figures/03-latin-square-and-row-column-goulden-map-1.png" alt="plot of chunk goulden-map" width="70%" />
+<p class="caption">plot of chunk goulden-map</p>
+</div>
+
+We fit four models to the same data — ignoring structure, blocking on rows, blocking on
+columns, and the full Latin-square model:
+
+
+```r
+models <- c("yield ~ trt", "yield ~ factor(row) + trt", "yield ~ factor(col) + trt",
+            "yield ~ factor(row) + factor(col) + trt")
+tab <- do.call(rbind, lapply(models, function(f) {
+  a <- anova(lm(as.formula(f), data = g))
+  data.frame(model = f, residual_df = a["Residuals", "Df"],
+             residual_MS = round(a["Residuals", "Mean Sq"], 2),
+             p_treatment = signif(a["trt", "Pr(>F)"], 3))
+}))
+tab
+```
+
+```
+#>                                     model residual_df residual_MS p_treatment
+#> 1                             yield ~ trt          20        4.44    6.67e-05
+#> 2               yield ~ factor(row) + trt          16        2.63    7.07e-06
+#> 3               yield ~ factor(col) + trt          16        4.67    2.25e-04
+#> 4 yield ~ factor(row) + factor(col) + trt          12        2.34    2.37e-05
+```
+
+- **Rows matter:** blocking on rows cuts the residual mean square from 4.44
+  to 2.63.
+- **Columns add little here:** the full Latin-square model reaches 2.34, at
+  the cost of 4 more error degrees of freedom.
+- The Latin square was still a safe choice: before the trial, nobody knew which direction
+  would matter. The analysis must follow the design, so report the full model.
+
+
+```r
+library(emmeans)
+fit_ls <- lm(yield ~ factor(row) + factor(col) + trt, data = g)
+emmeans(fit_ls, ~ trt)
+```
+
+```
+#>  trt emmean    SE df lower.CL upper.CL
+#>  A     6.84 0.684 12     5.35     8.33
+#>  B     6.46 0.684 12     4.97     7.95
+#>  C    13.12 0.684 12    11.63    14.61
+#>  D     7.96 0.684 12     6.47     9.45
+#>  E     4.92 0.684 12     3.43     6.41
+#> 
+#> Results are averaged over the levels of: row, col 
+#> Confidence level used: 0.95
+```
+
+---
+
+## ⚠️ Common Misconceptions
+
+| ❌ The misconception | ✅ What is actually true — and what to do |
+|---|---|
+| **"Latin squares are always better than RCBDs."** | They cost degrees of freedom; with small squares (3 × 3) there is almost no error d.f. left. |
+| **"Drop the columns from the model if they aren't significant."** | Analyse as designed; post hoc model reduction changes the meaning of the tests. |
+| **"Latin squares work for 20 varieties."** | That needs 20 replicates; use row–column designs. |
+| **"The square must be square in metres."** | It must be square in *number* of rows and columns. |
+
+---
+
+## 🧪 Spot the Flaw
+
+> "Six irrigation treatments were applied in a 6 × 6 Latin square; irrigation lines run
+> along the rows, so each row received one irrigation level throughout."
+
+<details>
+<summary>▶ Diagnosis</summary>
+
+If a factor is applied to whole rows, it is not randomized within rows; it is confounded with
+row. A Latin square requires each treatment once per row and per column. Hard-to-change
+factors such as irrigation need a split-plot or strip-plot design (Module 4).
+</details>
+
+---
+
+## 🔎 The Reviewer's Perspective
+
+- **"Were both row and column effects in the analysis?"**
+- **"Were there enough error degrees of freedom (t ≥ 4–5)?"**
+- **"Was the randomization a random Latin square, not a standard cyclic one?"**
+
+---
+
+## 🛠️ Design Challenge
+
+A glasshouse has 4 benches (north to south) and plants are placed at 4 distances from the
+heating pipes. Test 4 nutrient solutions. Generate and map a design.
+
+<details>
+<summary>▶ Model solution</summary>
+
+
+```r
+gh <- design.lsd(trt = c("N1", "N2", "N3", "N4"), seed = 42, serie = 0)$book
+names(gh)[4] <- "solution"
+desplot(gh, solution ~ col * row, text = solution, cex = 1.1, show.key = FALSE,
+        main = "Rows = benches, columns = distance from pipes")
+```
+
+<div class="figure" style="text-align: center">
+<img src="figures/03-latin-square-and-row-column-challenge-1.png" alt="plot of chunk challenge" width="60%" />
+<p class="caption">plot of chunk challenge</p>
+</div>
+
+A 4 × 4 square leaves (4 − 1)(4 − 2) = 6 error d.f. — little. Run two independent squares
+(e.g. two compartments or two runs in time) and analyse them together, with square as an
+additional factor.
+</details>
+
+---
+
+## 🧑‍💻 Code-along Exercises
+
+1. Analyse `agridat::cochran.latin` (`diff ~ row + col + operator`). Which blocking direction matters?
+2. Generate a resolvable row–column design for 30 entries in 3 replicates with `FielDHub::row_column()` and map it.
+3. Compute the relative efficiency of the Latin square versus an RCBD on rows for `goulden.latin`.
+
+---
+
+## ✅ Check Your Understanding
+
+**⭐ Q1.** What property defines a Latin square?
+
+**⭐ Q2.** How many error degrees of freedom does a 6 × 6 Latin square have?
+
+**⭐⭐ Q3.** In `goulden.latin`, which blocking direction mattered, and how do you know?
+
+**⭐⭐ Q4.** Why not use a Latin square for 25 breeding lines?
+
+**⭐⭐⭐ Q5.** Propose a design for 40 lines in 2 replicates in a field with gradients in both directions.
+
+---
+
+## 📝 Sample Answers & Assessment
+
+<details>
+<summary>▶ Show sample answers</summary>
+
+> **Q1 — Sample answer:** *"Each treatment once in each row and each column."* — **✔ 10/10.**
+
+> **Q2 — Sample answer:** *"(6 − 1)(6 − 2) = 20."* — **✔ 10/10.**
+
+> **Q3 — Sample answer:** *"Rows — the residual MS fell from 4.44 to 2.63."* — **✔ 10/10.**
+
+> **Q4 — Sample answer:** *"It would need 25 reps."* — **✔ 10/10.**
+
+> **Q5 — Sample answer:** *"A resolvable row–column design; each replicate is a block, with rows and columns within replicates as incomplete blocks."* — **✔ 10/10.** Add a spatial analysis as a complement (Module 7).
+
+**Rubric:** two-way designs must be justified by two-way variation and analysed with both blocking factors.
+</details>
+
+---
+
+## 🧾 Module Summary
+
+| Concept | One-line takeaway |
+|---|---|
+| **Latin square** | Each treatment once per row and column; two-way blocking. |
+| **Cost** | t replicates required; 2(t − 1) d.f. spent on blocking. |
+| **Analysis** | `y ~ row + col + trt`, analysed as designed. |
+| **Scaling up** | Row–column designs for many entries. |
+
+### 📇 Field Design Card — rows for this module
+
+| Field | Your answer |
+|---|---|
+| Gradients in one or two directions? | |
+| Design (RCBD/Latin square/row–column) | |
+| Error d.f. available | |
+
+---
+
+## 🔗 Go Deeper
+
+- Main course: [Ch. 5 — Blocking](../../chapters/05-blocking-and-batches.md)
+- Incomplete-block and row–column designs: Module 5; ([Piepho et al., 2006](https://doi.org/10.1111/j.1439-0523.2006.01267.x))
+
+## 📚 References cited in this chapter
+
+- Piepho HP, Büchse A, Truberg B (2006). On the use of multiple lattice designs and α‐designs in plant breeding trials. *Plant Breeding* 125:523-528. [doi:10.1111/j.1439-0523.2006.01267.x](https://doi.org/10.1111/j.1439-0523.2006.01267.x)
+- Wright K (2011). agridat: Agricultural Datasets. *CRAN: Contributed Packages*. [doi:10.32614/cran.package.agridat](https://doi.org/10.32614/cran.package.agridat)
+
+
+---
+
+[← Module 2](02-crd-and-rcbd.md) · [Sub-course home](README.md) · [Next: Module 4 — Factorials, Split-Plots and Strip-Plots →](04-factorial-split-strip.md)

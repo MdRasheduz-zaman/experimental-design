@@ -1,0 +1,263 @@
+# Module 4 — Factorials, Split-Plots and Strip-Plots
+
+> **Sub-course: Field Experiments in Agriculture & Plant Breeding**
+> [← Module 3](03-latin-square-and-row-column.md) · [Sub-course home](README.md) · [Next: Module 5 — Incomplete Blocks: Lattice and α-Designs →](05-incomplete-blocks-alpha.md)
+
+---
+
+## 🧭 Learning Objectives
+
+After this module you will be able to:
+
+1. Recognize when practical constraints turn a factorial into a **split-plot** or **strip-plot**.
+2. Generate and map split-plot layouts with `agricolae`/`FielDHub`, outlining whole plots with `desplot`.
+3. Fit the correct mixed model with **two error strata**.
+4. Show, with Yates's oats data, what goes wrong when a split-plot is analysed as an RCBD.
+
+---
+
+## 🎯 The Big Picture
+
+Agronomic questions usually involve several factors — variety × nitrogen, tillage ×
+sowing date, irrigation × cultivar. A full factorial randomizes every combination to
+individual plots. In the field that is often impractical: irrigation, tillage or sowing
+machinery work on **large strips**, while varieties or fertilizer rates can vary on small
+plots. The result is a **split-plot**: one factor on large *whole plots*, another on
+*sub-plots* within them [@yates1935]. Each factor then has its own error term — and using
+the wrong one is one of the most common analysis errors in agriculture.
+
+---
+
+## 🧠 Core Intuition
+
+| Design | Factor A applied to | Factor B applied to | Error terms |
+|---|---|---|---|
+| Factorial RCBD | plots | plots | one |
+| **Split-plot** | whole plots (within blocks) | sub-plots (within whole plots) | whole-plot error for A; sub-plot error for B and A×B |
+| **Strip-plot (split-block)** | strips in one direction | strips in the other direction | three: for A, for B, for A×B |
+
+**Consequences:** the whole-plot factor is estimated from **few, large units**, so it is
+compared with *larger* error and fewer d.f.; the sub-plot factor and the interaction are
+estimated **more precisely**. Choose the factor that needs most precision as the sub-plot factor.
+
+---
+
+## 👁️ Visual Intuition — Yates's oats
+
+`agridat::yates.oats`: 3 oat varieties on whole plots, 4 nitrogen rates on sub-plots,
+6 blocks [@yates1935; @agridat_cran].
+
+```{r oats-map, fig.height = 4.6}
+library(agridat); library(desplot)
+y <- yates.oats
+y$nf <- factor(y$nitro)
+desplot(y, gen ~ col * row, out1 = block, out2 = gen, out2.gpar = list(col = "grey25", lwd = 1.2),
+        text = nitro, shorten = "none", cex = 0.85,
+        main = "yates.oats: variety whole plots (colour) with N rates (cwt/acre) in sub-plots")
+```
+
+Thick lines are blocks; thin lines outline the variety whole plots (colours); the numbers are
+the nitrogen rates randomized *within* each whole plot.
+
+### Generating a split-plot
+
+```{r split-gen}
+library(agricolae)
+sp <- design.split(trt1 = c("A", "B", "C"), trt2 = c("N0", "N1", "N2", "N3"),
+                   r = 4, design = "rcbd", seed = 5, serie = 0)$book
+names(sp)[4:5] <- c("variety", "nitrogen")
+head(sp, 8)
+```
+
+```{r split-map, fig.height = 3.6}
+sp$row <- as.integer(sp$block)
+num <- function(x) as.integer(as.character(x))
+sp$col <- (num(sp$plots) - 1) %% 3 * 4 + num(sp$splots)   # 3 whole plots x 4 sub-plots per block
+desplot(sp, nitrogen ~ col * row, out1 = block, out2 = plots, out2.gpar = list(col = "grey25", lwd = 1.2), text = variety, cex = 0.9,
+        main = "Generated split-plot: variety on whole plots, N on sub-plots")
+```
+
+`FielDHub::split_plot()` and `FielDHub::strip_plot()` generate the same designs with field books.
+
+---
+
+## 🔬 Worked Example — the right and the wrong analysis
+
+### The model that matches the design
+
+```{r right}
+library(lme4); library(lmerTest); library(emmeans)
+right <- lmer(yield ~ gen * nf + (1 | block) + (1 | block:gen), data = y)
+anova(right, ddf = "Kenward-Roger")
+VarCorr(right)
+```
+
+The random term `block:gen` is the **whole plot**: it gives variety its own error stratum.
+
+### The common mistake: analysing it as an RCBD factorial
+
+```{r wrong}
+wrong <- lm(yield ~ block + gen * nf, data = y)
+anova(wrong)
+```
+
+```{r compare, echo = FALSE}
+ar <- anova(right, ddf = "Kenward-Roger"); aw <- anova(wrong)
+sed <- function(f, term) summary(pairs(emmeans(f, as.formula(paste("~", term)))))$SE[1]
+cmp <- data.frame(quantity = c("p-value, variety", "SED, variety means", "SED, nitrogen means"),
+                  correct_split_plot = c(signif(ar["gen", "Pr(>F)"], 2), round(sed(right, "gen"), 2), round(sed(right, "nf"), 2)),
+                  wrong_RCBD = c(signif(aw["gen", "Pr(>F)"], 2), round(sed(wrong, "gen"), 2), round(sed(wrong, "nf"), 2)))
+```
+
+```{r cmp-table}
+cmp
+```
+
+- The wrong analysis declares the **variety** effect significant (*p* = `r cmp$wrong_RCBD[1]`);
+  the correct whole-plot test does not (*p* = `r cmp$correct_split_plot[1]`).
+- It **understates** the SED for varieties (`r cmp$wrong_RCBD[2]` instead of
+  `r cmp$correct_split_plot[2]`): whole plots are pseudoreplicated by their sub-plots.
+- It **overstates** the SED for nitrogen (`r cmp$wrong_RCBD[3]` instead of
+  `r cmp$correct_split_plot[3]`): it fails to remove whole-plot variation from sub-plot
+  comparisons.
+
+So the wrong analysis is too optimistic about the hard-to-change factor and too pessimistic
+about the easy one. This is the field version of pseudoreplication
+([main course, Ch. 3](../../chapters/03-experimental-unit-and-replication.md)).
+
+```{r nitrogen-means}
+emmeans(right, ~ nf)
+```
+
+---
+
+## ⚠️ Common Misconceptions
+
+| ❌ The misconception | ✅ What is actually true — and what to do |
+|---|---|
+| **"A split-plot is just a factorial with a funny layout."** | It has two experimental units and two error terms. |
+| **"Put the most important factor on whole plots."** | Usually the opposite: sub-plot factors are estimated more precisely. |
+| **"Strip-plots are split-plots."** | Strip-plots have three strata; the interaction gets its own error. |
+| **"Only agriculture has split-plots."** | Incubators × media, tanks × diets, cages × drugs — they are everywhere ([main course, Ch. 7](../../chapters/07-treatment-structures.md)). |
+
+---
+
+## 🧪 Spot the Flaw
+
+> "Two tillage systems (strips, 1 per block) × 5 maize hybrids (randomized within strips),
+> 4 blocks. Analysis: two-way ANOVA with block, tillage, hybrid and tillage × hybrid, all
+> tested against the residual. Tillage: *p* < 0.001."
+
+<details>
+<summary>▶ Diagnosis</summary>
+
+Tillage is a whole-plot factor with only 4 replicates (one strip per block). It must be tested
+against the block × tillage (whole-plot) error with 3 d.f., not the sub-plot residual. The
+reported *p* < 0.001 is almost certainly too small. Fit `(1 | block) + (1 | block:tillage)`.
+</details>
+
+---
+
+## 🔎 The Reviewer's Perspective
+
+- **"Which factor was applied to which unit?"** Ask for the map.
+- **"Does the model contain the whole-plot error term?"**
+- **"How many whole-plot replicates are there?"** Often surprisingly few.
+
+---
+
+## 🛠️ Design Challenge
+
+You will test 2 irrigation regimes (drip lines serve whole strips) × 6 wheat cultivars, with
+4 blocks. Generate a split-plot layout and write the model.
+
+<details>
+<summary>▶ Model solution</summary>
+
+```{r challenge, fig.height = 3.4}
+irr <- design.split(trt1 = c("Dry", "Wet"), trt2 = paste0("C", 1:6), r = 4,
+                    design = "rcbd", seed = 99, serie = 0)$book
+names(irr)[4:5] <- c("irrigation", "cultivar")
+irr$row <- as.integer(irr$block)
+irr$col <- (num(irr$plots) - 1) %% 2 * 6 + num(irr$splots)
+desplot(irr, irrigation ~ col * row, out1 = block, out2 = plots, out2.gpar = list(col = "grey25", lwd = 1.2), text = cultivar, cex = 0.8,
+        main = "Irrigation (colour, whole plots) x cultivar (sub-plots)")
+```
+
+Model: `yield ~ irrigation * cultivar + (1 | block) + (1 | block:irrigation)`. With only
+4 whole-plot replicates, consider more blocks if irrigation is the main interest.
+</details>
+
+---
+
+## 🧑‍💻 Code-along Exercises
+
+1. Analyse `agridat::little.splitblock` (strip-plot: harvest date × nitrogen). Write the three-stratum model.
+2. Re-analyse `yates.oats` with `nlme::lme(yield ~ gen * nf, random = ~ 1 | block/gen)` and compare with `lmer`.
+3. Using `FielDHub::split_plot()`, generate a design for 3 tillage × 4 cultivars × 5 reps and map it with `desplot`.
+
+---
+
+## ✅ Check Your Understanding
+
+**⭐ Q1.** What makes a design a split-plot?
+
+**⭐ Q2.** Which effects are tested against the sub-plot error?
+
+**⭐⭐ Q3.** Explain why the wrong analysis of `yates.oats` made varieties look significant.
+
+**⭐⭐ Q4.** How many experimental units does `yates.oats` have for variety? For nitrogen?
+
+**⭐⭐⭐ Q5.** A greenhouse experiment has 2 temperatures (one chamber each) × 4 genotypes. What can and can't be concluded about temperature, and how would you fix the design?
+
+---
+
+## 📝 Sample Answers & Assessment
+
+<details>
+<summary>▶ Show sample answers</summary>
+
+> **Q1 — Sample answer:** *"One factor on big plots, another on small plots inside them."* — **✔ 10/10.**
+
+> **Q2 — Sample answer:** *"The sub-plot factor and the interaction."* — **✔ 10/10.**
+
+> **Q3 — Sample answer:** *"It used the small sub-plot error for a whole-plot factor."* — **✔ 10/10.** The 4 sub-plots of each whole plot were treated as independent replicates of variety.
+
+> **Q4 — Sample answer:** *"18 whole plots for variety, 72 sub-plots for nitrogen."* — **✔ 10/10.** (3 varieties × 6 blocks; 18 × 4.)
+
+> **Q5 — Sample answer:** *"Nothing about temperature — one chamber per level."* — **✔ 9/10.** Temperature is confounded with chamber (n = 1 per level). Fix: repeat runs with temperatures re-randomized to chambers, giving several whole-plot replicates; analyse as a split-plot with run × chamber as whole plots.
+
+**Rubric:** full credit names the experimental unit for each factor.
+</details>
+
+---
+
+## 🧾 Module Summary
+
+| Concept | One-line takeaway |
+|---|---|
+| **Split-plot** | Hard-to-change factor on whole plots, easy one on sub-plots. |
+| **Two error strata** | Whole-plot factor tested against whole-plot error. |
+| **Wrong analysis** | Overconfident on whole-plot factor, underconfident on sub-plot factor. |
+| **Strip-plot** | Three strata; the interaction has its own error. |
+
+### 📇 Field Design Card — rows for this module
+
+| Field | Your answer |
+|---|---|
+| Factors and the unit each is applied to | |
+| Number of whole-plot replicates | |
+| Model with random terms for each stratum | |
+
+---
+
+## 🔗 Go Deeper
+
+- Main course: [Ch. 7 — Treatment Structures](../../chapters/07-treatment-structures.md)
+- Mixed models for designed experiments: [@piepho2003; @altman2015split]
+
+<!-- REFS -->
+
+---
+
+[← Module 3](03-latin-square-and-row-column.md) · [Sub-course home](README.md) · [Next: Module 5 — Incomplete Blocks: Lattice and α-Designs →](05-incomplete-blocks-alpha.md)

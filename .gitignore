@@ -1,0 +1,29 @@
+# --- R / Python cruft ---
+Rplots.pdf
+.Rhistory
+__pycache__/
+*.py[cod]
+
+# --- macOS / editors ---
+.DS_Store
+._*
+.vscode/
+.idea/
+*.swp
+
+# --- intermediate build output and node tools ---
+.build/
+tools/node_modules/
+
+# --- shared diagram render cache ---
+# Every page keeps its own copies under figures/diagrams/, which ARE versioned; this directory only
+# saves re-rendering between builds. Regenerate with: python3 scripts/07_build_course.py
+assets/diagrams/
+
+# --- regenerable API response cache (~850 files, ~13 MB) ---
+# Kept on disk so run_all.sh re-runs offline and deterministically; not worth versioning.
+literature/raw/
+
+# --- third-party full texts fetched for quotation checking (scripts/09_fetch_fulltexts.py) ---
+# Each paper stays under its own publisher licence; refetch rather than redistribute.
+literature/papers/*.xml

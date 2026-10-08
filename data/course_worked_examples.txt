@@ -1,0 +1,129 @@
+== Ch3 design effect ==
+DE = 30.7  n_eff per group = 13.02932 
+== Ch4 randomisation ==
+ [1] "Control" "Control" "Drug"    "Drug"    "Control" "Control" "Drug"   
+ [8] "Control" "Drug"    "Control" "Drug"    "Drug"   
+   mouse   group
+1    M01    Drug
+2    M02 Control
+3    M03    Drug
+4    M04 Control
+5    M05    Drug
+6    M06    Drug
+7    M07 Control
+8    M08    Drug
+9    M09 Control
+10   M10    Drug
+11   M11 Control
+12   M12 Control
+block randomisation (4 litters of 2):
+     [,1]      [,2]     
+[1,] "Drug"    "Control"
+[2,] "Drug"    "Control"
+[3,] "Drug"    "Control"
+[4,] "Control" "Drug"   
+== Ch5 paired vs unpaired (litter-matched) ==
+[1] 1.3 1.6 0.8 1.7 1.3 1.2
+unpaired p = 0.492 
+paired   p = 0.000162 
+mean diff = 1.316667  sd diff = 0.319  sd ctrl = 3.06 
+== Ch7 2x2 factorial ==
+        treatment
+genotype Vehicle Drug
+      WT      10   12
+      KO      14   24
+drug effect in WT = 2 ; in KO = 10 ; interaction = 8 
+== Ch8 power ==
+d = 0.5  n/group = 64 
+d = 0.8  n/group = 26 
+d = 1.2  n/group = 12 
+d = 2  n/group = 6 
+power with n=3, d=1: 0.157 
+power with n=5, d=1: 0.286 
+example: SD=15 mg/dL, delta=20 -> n = 10 
+proportions 0.30 vs 0.15: 121 
+paired, sd_diff=0.6, delta=1.0: 6 
+cluster: 20 per cluster, ICC 0.05 DE = 1.95 
+== Ch12 leakage simulation (pure noise) ==
+leaky CV accuracy = 0.95 ; proper CV accuracy = 0.475 
+over 50 noise datasets: leaky mean = 0.967  proper mean = 0.469 
+== Ch13 2^3 factorial ==
+  Temp pH Glucose Yield
+1   -1 -1      -1    52
+2    1 -1      -1    60
+3   -1  1      -1    54
+4    1  1      -1    70
+5   -1 -1       1    50
+6    1 -1       1    62
+7   -1  1       1    56
+8    1  1       1    80
+           Temp              pH         Glucose         Temp:pH    Temp:Glucose 
+             15               9               3               5               3 
+     pH:Glucose Temp:pH:Glucose 
+              3               1 
+== Ch14 Z prime ==
+mean pos 1000 sd 28.3 mean neg 100 sd 8 Z' = 0.879 
+noisy Z' = -0.041  sd pos2 292.7 mean 966.7 
+expected false positives in 20000 null genes at p<0.05: 1000 
+== Ch15 Bland-Altman ==
+r = 0.993  bias = 0.57  LoA = 0.224 to 0.916 
+== Ch24 correlation n ==
+n for r=0.1: 783 
+n for r=0.3: 85 
+== Ch20 RNA-seq budget ==
+    n   mu  power
+1   2   10 0.1445
+2   3   10 0.2145
+3   4   10 0.2700
+4   6   10 0.3725
+5   8   10 0.4795
+6  10   10 0.5515
+7  12   10 0.6545
+8   2  100 0.2535
+9   3  100 0.3410
+10  4  100 0.4015
+11  6  100 0.5740
+12  8  100 0.6980
+13 10  100 0.7845
+14 12  100 0.8525
+15  2 1000 0.2475
+16  3 1000 0.3420
+17  4 1000 0.4595
+18  6 1000 0.6040
+19  8 1000 0.7160
+20 10 1000 0.8350
+21 12 1000 0.8720
+== Ch19 RCBD vs CRD (simulated field gradient) ==
+residual MS CRD-analysis = 7.626  RCBD = 0.86  p(genotype) CRD = 0.976  RCBD = 0.0346 
+== Ch8 extra checks ==
+power n=6, d=0.8: 0.24 
+n for delta=3, sd=4: 29 
+power n=8/group, d=1.6: 0.845 
+== Ch9 precision for a proportion ==
+p=0.5,E=0.05: 385  p=0.5,E=0.10: 97  p=0.2,E=0.05: 246 
+with 10 isolates/farm, ICC=0.2: DE = 2.8  n = 689  farms = 69 
+with 3 isolates/farm, ICC=0.2: DE = 1.4  n = 345  farms = 115 
+== Ch11 Mendelian randomization Wald ratio ==
+ratio (log OR per mmol/L) = 0.5  OR = 1.649  SE(first-order) = 0.12  95% CI OR = 1.3 - 2.09  F = 400 
+== Ch14 CRISPR coverage ==
+cells with guides = 40 M; at measured 30% transduction = 133 M
+at Poisson MOI 0.3, transduced fraction = 0.259 ; starting cells needed = 155 M
+Z' Q3: 0.55 
+== Ch16 qPCR efficiency ==
+ddCt = -3: assumed 100% -> 8 ; true 90% -> 6.86 ; overestimate = 16.6 %
+ddCt = -6: assumed 100% -> 64 ; true 90% -> 47 ; overestimate = 36 %
+== Ch17 cage design effect (ICC 0.5) ==
+mice/cage = 6  cages/diet = 2  DE = 3.5  n_eff/diet = 3.4 
+mice/cage = 3  cages/diet = 4  DE = 2  n_eff/diet = 6 
+mice/cage = 2  cages/diet = 6  DE = 1.5  n_eff/diet = 8 
+mice/cage = 1  cages/diet = 12  DE = 1  n_eff/diet = 12 
+== Ch23 cluster RCT ==
+individual n/arm = 121  DE = 1.95  cluster n/arm = 236  clinics/arm = 12 
+== Ch24 winner's curse for correlations ==
+n = 20  power = 0.072  mean r among significant positive = 0.523 
+n = 100  power = 0.174  mean r among significant positive = 0.247 
+n = 800  power = 0.813  mean r among significant positive = 0.112 
+== Revised planning checks ==
+29 retained, 10% attrition: allocate 33 per group
+16 retained cages, 10% cage loss: allocate 18 per group
+2 mice/cage, ICC 0.05: cages/arm = 16 

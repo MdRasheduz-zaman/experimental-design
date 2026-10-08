@@ -1,0 +1,283 @@
+# Module 8 — Multi-Environment Trials and G × E
+
+> **Sub-course: Field Experiments in Agriculture & Plant Breeding**
+> [← Module 7](07-spatial-analysis.md) · [Sub-course home](README.md) · [Next: Module 9 — Planning a Field Trial →](09-planning-field-trials.md)
+
+---
+
+## 🧭 Learning Objectives
+
+After this module you will be able to:
+
+1. Map and summarize a multi-environment trial (MET) with faceted `desplot` figures.
+2. Fit a mixed model that separates genotype, G × E, and within-trial design effects.
+3. Use variance components to decide between **more replicates** and **more locations**.
+4. Explain why the environment, not the plot, is the replicate for recommendations.
+
+---
+
+## 🎯 The Big Picture
+
+Varieties are released for a *region* and for *future seasons*, not for one field. Genotypes
+often rank differently across environments — **genotype × environment interaction (G × E)**.
+A single-site trial, however well designed, estimates the genotype effect *plus* its interaction
+with that site and year. Multi-environment trials (METs) spread the testing across locations
+and years, and mixed models combine them ([SMITH et al., 2005](https://doi.org/10.1017/s0021859605005587); [Piepho, 1997](https://doi.org/10.2307/2533976)).
+
+---
+
+## 🧠 Core Intuition
+
+For a genotype mean over *L* locations with *R* replicates each:
+
+$$\operatorname{Var}(\bar y_{g}) = \frac{\sigma^2_{GE}}{L} + \frac{\sigma^2_e}{L\,R}$$
+
+- Extra **replicates** shrink only the plot-error term.
+- Extra **locations** shrink both — including G × E, which replicates can never reduce.
+
+So when G × E matters, **spread plots over more environments** rather than piling replicates
+into one.
+
+---
+
+## 👁️ Visual Intuition — `besag.met`
+
+64 genotypes, 6 counties (locations), 3 replicates each, incomplete blocks within replicates.
+
+
+```r
+library(agridat); library(desplot)
+b <- besag.met
+desplot(b, yield ~ col * row | county, out1 = rep, out2 = block,
+        out2.gpar = list(col = "grey40", lwd = 0.5), strip.cex = 1,
+        main = "besag.met: six locations, replicates (thick) and incomplete blocks (thin)")
+```
+
+<div class="figure" style="text-align: center">
+<img src="figures/08-multi-environment-trials-met-map-1.png" alt="plot of chunk met-map" width="100%" />
+<p class="caption">plot of chunk met-map</p>
+</div>
+
+Locations differ in mean yield, and each field has its own spatial pattern.
+
+
+```r
+gm <- aggregate(yield ~ gen + county, data = b, FUN = mean)
+top <- names(sort(tapply(gm$yield, gm$gen, mean), decreasing = TRUE))[1:6]
+sub <- droplevels(subset(gm, gen %in% top))
+interaction.plot(sub$county, sub$gen, sub$yield, type = "b", pch = 19, lwd = 2,
+                 col = c("#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#4a3aa7"),
+                 xlab = "Location", ylab = "Mean yield", trace.label = "Genotype",
+                 main = "G x E: the six best genotypes across locations")
+```
+
+<div class="figure" style="text-align: center">
+<img src="figures/08-multi-environment-trials-met-ge-1.png" alt="plot of chunk met-ge" width="100%" />
+<p class="caption">plot of chunk met-ge</p>
+</div>
+
+Crossing lines mean rankings change between locations — G × E in action.
+
+---
+
+## 🔬 Worked Example — variance components and resource allocation
+
+
+```r
+library(lme4)
+fm <- lmer(yield ~ county + (1 | gen) + (1 | gen:county) +
+             (1 | county:rep) + (1 | county:rep:block), data = b)
+vc <- as.data.frame(VarCorr(fm))[, c("grp", "vcov")]
+vc
+```
+
+```
+#>                grp      vcov
+#> 1       gen:county  13.14127
+#> 2 county:rep:block  52.86307
+#> 3              gen  36.74693
+#> 4       county:rep 121.46610
+#> 5         Residual 200.24239
+```
+
+```r
+s2g  <- vc$vcov[vc$grp == "gen"]
+s2ge <- vc$vcov[vc$grp == "gen:county"]
+s2e  <- vc$vcov[vc$grp == "Residual"]
+```
+
+Now compute the heritability of a genotype mean for different allocations of the same
+number of plots:
+
+
+```r
+h2 <- function(L, R, ge = s2ge) s2g / (s2g + ge / L + s2e / (L * R))
+alloc <- data.frame(locations = c(1, 2, 3, 6), reps = c(6, 3, 2, 1))
+alloc$plots_per_genotype <- alloc$locations * alloc$reps
+alloc$H2_observed_GxE <- round(mapply(h2, alloc$locations, alloc$reps), 3)
+alloc$H2_if_GxE_doubled <- round(mapply(h2, alloc$locations, alloc$reps, MoreArgs = list(ge = 2 * s2ge)), 3)
+alloc
+```
+
+```
+#>   locations reps plots_per_genotype H2_observed_GxE H2_if_GxE_doubled
+#> 1         1    6                  6           0.441             0.381
+#> 2         2    3                  6           0.479             0.441
+#> 3         3    2                  6           0.493             0.466
+#> 4         6    1                  6           0.508             0.493
+```
+
+With the same 6 plots per genotype:
+
+- **1 location × 6 replicates:** H² = 0.441.
+- **6 locations × 1 replicate:** H² = 0.508.
+- If G × E were twice as large, the advantage of spreading across locations would grow
+  (0.381 vs 0.493).
+
+In this dataset G × E is modest (σ²_GE = 13.1 vs σ²_G = 36.7), so the
+difference is real but moderate. **Estimate these components from your own programme's
+historical data before allocating plots.** Keep at least 2 replicates per location if you also
+need location-specific results or within-site error estimates.
+
+---
+
+## ⚠️ Common Misconceptions
+
+| ❌ The misconception | ✅ What is actually true — and what to do |
+|---|---|
+| **"More replicates at the station are as good as more sites."** | Not when G × E exists. |
+| **"G × E is noise."** | It can be exploited (local adaptation) or managed (broad adaptation), but it must be estimated. |
+| **"Analyse each site separately and average."** | A joint mixed model weights sites properly and estimates G × E. |
+| **"One year is enough."** | Years are environments too; genotype × year interaction is often large. |
+
+---
+
+## 🧪 Spot the Flaw
+
+> "To recommend a variety for the whole region, we tested 12 varieties at our research station
+> with 8 replicates in one year."
+
+<details>
+<summary>▶ Diagnosis</summary>
+
+One environment: genotype effects are confounded with genotype × (station, year) interaction.
+96 plots per variety would serve better as e.g. 2 replicates at 4 locations over 2 years, with
+a joint mixed-model analysis.
+</details>
+
+---
+
+## 🔎 The Reviewer's Perspective
+
+- **"How many locations and years, and how were they chosen (representative of the target region)?"**
+- **"Was G × E estimated in a joint model?"**
+- **"Is the recommendation's scope consistent with the environments tested?"**
+
+---
+
+## 🛠️ Design Challenge
+
+You have budget for 360 plots to evaluate 30 maize hybrids. From past trials:
+σ²_G = 40, σ²_GE = 30, σ²_e = 120. Find the allocation of locations × replicates with the highest
+heritability, keeping at least 2 replicates per location.
+
+<details>
+<summary>▶ Model solution</summary>
+
+
+```r
+h2c <- function(L, R) 40 / (40 + 30 / L + 120 / (L * R))
+opts <- subset(expand.grid(L = 1:12, R = 2:6), L * R * 30 == 360)
+opts$H2 <- round(h2c(opts$L, opts$R), 3)
+opts[order(-opts$H2), ]
+```
+
+```
+#>    L R    H2
+#> 6  6 2 0.727
+#> 16 4 3 0.696
+#> 27 3 4 0.667
+#> 50 2 6 0.615
+```
+
+The most locations compatible with 2 replicates (6 × 2) maximizes heritability.
+</details>
+
+---
+
+## 🧑‍💻 Code-along Exercises
+
+1. Fit `besag.met` with a separate residual variance per location (`glmmTMB` or `nlme`). Do sites differ in precision?
+2. Compute genotype BLUPs from the joint model and compare rankings with site-wise means.
+3. Explore `agridat::belamkar.augmented` across 8 locations with faceted `desplot`.
+
+---
+
+## ✅ Check Your Understanding
+
+**⭐ Q1.** What is G × E?
+
+**⭐ Q2.** Which variance term can more replicates *not* reduce?
+
+**⭐⭐ Q3.** Using the formula, explain why 6 locations × 1 rep beats 1 location × 6 reps.
+
+**⭐⭐ Q4.** Why keep ≥ 2 replicates per location even if locations are more valuable?
+
+**⭐⭐⭐ Q5.** How would you choose locations to represent a target region?
+
+---
+
+## 📝 Sample Answers & Assessment
+
+<details>
+<summary>▶ Show sample answers</summary>
+
+> **Q1 — Sample answer:** *"When genotype rankings change between environments."* — **✔ 10/10.** (More generally: when genotype differences depend on the environment.)
+
+> **Q2 — Sample answer:** *"G × E."* — **✔ 10/10.**
+
+> **Q3 — Sample answer:** *"G × E is divided by 6 instead of 1."* — **✔ 10/10.**
+
+> **Q4 — Sample answer:** *"To estimate within-site error and do site-level analyses."* — **✔ 10/10.**
+
+> **Q5 — Sample answer:** *"Pick farms we know."* — **✘ 3/10.** Define the target population of environments (soils, climate zones, management), stratify the region, and sample locations within strata; include multiple years.
+
+**Rubric:** link allocation to variance components and to the recommendation domain.
+</details>
+
+---
+
+## 🧾 Module Summary
+
+| Concept | One-line takeaway |
+|---|---|
+| **G × E** | Genotype differences depend on the environment. |
+| **Allocation** | Var = σ²_GE/L + σ²_e/(LR): locations reduce both terms. |
+| **Analysis** | Joint mixed model with genotype, G × E and design terms per site. |
+| **Scope** | Recommend only for environments like those tested. |
+
+### 📇 Field Design Card — rows for this module
+
+| Field | Your answer |
+|---|---|
+| Target population of environments | |
+| Locations × years × replicates | |
+| Variance components used for planning (source) | |
+
+---
+
+## 🔗 Go Deeper
+
+- Main course: [Ch. 19 — Breeding and Field Trials](../../chapters/19-breeding-and-field-trials.md) · [Ch. 9 — Descriptive Studies (sampling)](../../chapters/09-descriptive-studies.md)
+- Reading: ([SMITH et al., 2005](https://doi.org/10.1017/s0021859605005587); [Piepho, 1997](https://doi.org/10.2307/2533976); [Crossa et al., 2017](https://doi.org/10.1016/j.tplants.2017.08.011))
+
+## 📚 References cited in this chapter
+
+- Crossa J, Pérez-Rodríguez P, Cuevas J, Montesinos-López O, Jarquín D, de los Campos G, et al. (2017). Genomic Selection in Plant Breeding: Methods, Models, and Perspectives. *Trends in Plant Science* 22:961-975. [doi:10.1016/j.tplants.2017.08.011](https://doi.org/10.1016/j.tplants.2017.08.011)
+- Piepho HP (1997). Analyzing Genotype-Environment Data by Mixed Models with Multiplicative Terms. *Biometrics* 53:761. [doi:10.2307/2533976](https://doi.org/10.2307/2533976)
+- SMITH AB, CULLIS BR, THOMPSON R (2005). The analysis of crop cultivar breeding and evaluation trials: an overview of current mixed model approaches. *The Journal of Agricultural Science* 143:449-462. [doi:10.1017/s0021859605005587](https://doi.org/10.1017/s0021859605005587)
+
+
+---
+
+[← Module 7](07-spatial-analysis.md) · [Sub-course home](README.md) · [Next: Module 9 — Planning a Field Trial →](09-planning-field-trials.md)

@@ -1,0 +1,57 @@
+Designing Experiments in Biology — From Question to Protocol
+
+Copyright (c) 2026 Md Rasheduzzaman and contributors.
+
+================================================================================
+PROSE, FIGURES, AND COURSE CONTENT
+================================================================================
+
+Unless noted otherwise, the prose, diagrams, tables, and educational content in
+this repository (everything under chapters/ and subcourses/, the appendices, and
+README.md) are licensed under the
+
+    Creative Commons Attribution 4.0 International License (CC BY 4.0)
+    https://creativecommons.org/licenses/by/4.0/
+
+You are free to share and adapt the material for any purpose, even commercially,
+provided you give appropriate credit, link to the license, and indicate if
+changes were made.
+
+================================================================================
+CODE SNIPPETS
+================================================================================
+
+Any source-code snippets included for illustration are licensed under the MIT
+License:
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+
+================================================================================
+THIRD-PARTY MATERIAL
+================================================================================
+
+The sub-course "Design in the Literature" quotes short passages from the methods
+sections of published open-access papers, with attribution and a link to each
+source, for the purpose of commentary and teaching. Those passages remain the
+work of their authors under their own licences. The full texts themselves are not
+redistributed here; scripts/09_fetch_fulltexts.py retrieves them from Europe PMC
+into literature/papers/, which is excluded from version control.
+
+Reference metadata is retrieved from Crossref and Europe PMC and is subject to
+their terms of use.

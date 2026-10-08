@@ -1,0 +1,206 @@
+# Module 10 — Capstone: Design, Simulate, Analyse and Defend a Breeding Trial
+
+> **Sub-course: Field Experiments in Agriculture & Plant Breeding**
+> [← Module 9](09-planning-field-trials.md) · [Sub-course home](README.md)
+
+---
+
+## 🧭 Learning Objectives
+
+After this capstone you will be able to:
+
+1. Take a breeding trial from question to field book, at several locations.
+2. **Simulate** a realistic trial (genetic effects, G × E, field trends) to test your design *before* sowing.
+3. Compare analyses by how well they recover the **true** genetic values — something only simulation allows.
+4. Write and defend a complete design dossier.
+
+---
+
+## 🎯 The Big Picture
+
+In real trials you never know the true genetic values, so you can't check how good your design
+and analysis really are. In a **simulated** trial you can. This capstone builds a complete trial
+for **48 breeding lines at 3 locations**, generates yields with known truth, analyses them three
+ways, and measures **selection accuracy**: the correlation between estimated and true genetic
+values, and how many of the truly best lines you would have selected.
+
+---
+
+## 🔬 Part A — Worked example
+
+### 1. Design: α-design, 2 replicates, blocks of 6, at 3 locations
+
+```{r design}
+library(agricolae); library(desplot)
+make_site <- function(site, seed) {
+  a <- design.alpha(trt = sprintf("L%02d", 1:48), k = 6, r = 2, seed = seed, serie = 0)$book
+  names(a)[4] <- "gen"
+  a$site <- site
+  a$row  <- as.integer(as.character(a$cols))                # position within block (1-6)
+  a$col  <- as.integer(as.character(a$block))               # blocks 1-16 side by side
+  a
+}
+d <- rbind(make_site("S1", 11), make_site("S2", 12), make_site("S3", 13))
+d$gen <- factor(d$gen); d$site <- factor(d$site)
+d$rep <- factor(paste(d$site, d$replication)); d$blk <- factor(paste(d$site, d$block))
+table(d$site)
+```
+
+```{r design-map, fig.height = 4.6, fig.width = 9}
+desplot(d, replication ~ col * row | site, out1 = replication, out2 = block,
+        out2.gpar = list(col = "grey30", lwd = 0.6), text = gen, cex = 0.45, shorten = "no",
+        show.key = FALSE, main = "48 lines x 2 replicates x 3 sites (alpha-design, blocks of 6)")
+```
+
+### 2. Simulate yields with known truth
+
+Each site gets a smooth trend **plus patchy, block-scale variation** (soil patches, wet spots),
+G × E, and plot noise. The function returns one simulated dataset.
+
+```{r simulate}
+simulate_trial <- function(seed, d) {
+  set.seed(seed)
+  g  <- setNames(rnorm(48, 0, 4), levels(d$gen))                         # true genetic values (sd 4)
+  ge <- setNames(rnorm(48 * 3, 0, 2.5), paste(rep(levels(d$gen), 3), rep(levels(d$site), each = 48)))
+  site_mu <- c(S1 = 60, S2 = 52, S3 = 68)
+  trend <- ifelse(d$site == "S1", 0.6 * d$col, ifelse(d$site == "S2", 4 * sin(d$col / 3), -0.4 * d$col + 1.5 * d$row))
+  patch <- rnorm(nlevels(d$blk), 0, 4)[as.integer(d$blk)]                  # patchy field variation
+  d$y <- site_mu[as.character(d$site)] + g[as.character(d$gen)] + ge[paste(d$gen, d$site)] +
+         trend + patch + rnorm(nrow(d), 0, 3)
+  list(data = d, truth = g)
+}
+one <- simulate_trial(2026, d)
+```
+
+```{r sim-map, fig.height = 4.2, fig.width = 9}
+desplot(one$data, y ~ col * row | site, out1 = replication, main = "One simulated trial: trends and patches")
+```
+
+### 3. Analyse three ways and score them against the truth
+
+```{r analyses}
+library(lme4)
+score <- function(sim) {
+  dd <- sim$data; truth <- sim$truth[levels(dd$gen)]
+  m_rep <- lmer(y ~ site + (1 | gen) + (1 | gen:site) + (1 | rep), data = dd)
+  m_blk <- lmer(y ~ site + (1 | gen) + (1 | gen:site) + (1 | rep) + (1 | blk), data = dd)
+  est <- list(naive_means    = tapply(dd$y, dd$gen, mean)[levels(dd$gen)],
+              rep_only       = ranef(m_rep)$gen[levels(dd$gen), 1],
+              rep_and_blocks = ranef(m_blk)$gen[levels(dd$gen), 1])
+  top <- names(sort(truth, decreasing = TRUE))[1:8]
+  c(sapply(est, cor, truth),
+    sapply(est, function(e) sum(levels(dd$gen)[order(-e)][1:8] %in% top)))
+}
+res <- t(sapply(1:50, function(i) suppressMessages(score(simulate_trial(1000 + i, d)))))
+summary_tab <- data.frame(analysis = c("naive means", "replicates only", "replicates + incomplete blocks"),
+                          mean_accuracy = round(colMeans(res[, 1:3]), 3),
+                          sd_accuracy = round(apply(res[, 1:3], 2, sd), 3),
+                          mean_top8_recovered = round(colMeans(res[, 4:6]), 1))
+summary_tab
+```
+
+```{r acc-plot, fig.height = 4}
+boxplot(res[, 1:3], names = summary_tab$analysis, col = c("grey85", "#c9dcf5", "#2a78d6"),
+        ylab = "Correlation with true genetic values", main = "Selection accuracy over 50 simulated trials")
+```
+
+```{r gain, echo = FALSE}
+gain <- summary_tab$mean_accuracy[3] - summary_tab$mean_accuracy[1]
+```
+
+Over 50 simulated trials, the analysis that matches the design (replicates **and** incomplete
+blocks) reaches a mean accuracy of `r summary_tab$mean_accuracy[3]` and recovers on average
+`r summary_tab$mean_top8_recovered[3]` of the true top 8 lines, versus `r summary_tab$mean_accuracy[1]`
+and `r summary_tab$mean_top8_recovered[1]` for naive means
+(`r if (gain > 0.01) "a clear gain from modelling the design" else "little difference in this scenario"`).
+The **spread** across simulated trials (SD ≈ `r summary_tab$sd_accuracy[3]`) is a reminder that any
+single trial can be lucky or unlucky — which is why designs should be judged by simulation over many
+runs, not one.
+
+> **Try it:** set the patch SD in `simulate_trial()` to 0 (smooth fields only) and rerun. How much
+> of the gain disappears? This shows *when* incomplete blocks pay off: when fields are patchy at
+> the scale of the blocks.
+
+---
+
+## 🛠️ Part B — Your capstone project
+
+### Brief
+
+Choose **one** scenario (or your own):
+
+1. **Early-generation wheat:** 300 lines, seed for ~1.3 plots per line, 1 site, strong east–west gradient.
+2. **Advanced maize hybrids:** 40 hybrids, 4 locations × 2 years, budget 640 plots.
+3. **Agronomy:** 3 tillage systems × 4 nitrogen rates × 2 cultivars; tillage machinery needs 20 m strips.
+4. **Livestock forage:** 12 grass varieties grazed by sheep; grazing is managed per paddock.
+
+Produce a dossier (R Markdown recommended) containing:
+
+1. **Question and type** (main course, [Ch. 2](../../chapters/02-start-with-the-question.md)).
+2. **Units, factors and strata** (which factor on which unit).
+3. **Design choice** with justification (Modules 2–6) and the **field map** (`desplot`).
+4. **Field book** generated with a recorded seed (`agricolae`/`FielDHub`).
+5. **Planning**: replicates/locations from CV, Δ and variance components (Modules 8–9).
+6. **Simulation** of the trial and analysis under realistic assumptions, reporting power or
+   selection accuracy averaged over ≥ 100 simulated trials.
+7. **Analysis plan**: model formula(s), spatial terms, how means/BLUPs and SEDs will be reported.
+8. **Practicalities**: borders, plot size, data-quality rules, timeline.
+9. **Risk register**: three things most likely to go wrong and mitigations.
+
+### Rubric (100 points)
+
+| Criterion | Full marks | Points |
+|---|---|---|
+| Question, type and scope match the design | precise; limits stated | 10 |
+| Units and strata correct | each factor's unit and error stratum identified | 15 |
+| Design justified and mapped | appropriate for entries, seed and gradients; clear `desplot` map | 15 |
+| Reproducible field book | software + seed; coordinates included | 10 |
+| Planning numbers | CV/variance components sourced; replicates/locations justified | 15 |
+| Simulation | realistic, repeated, linked to the decision | 15 |
+| Analysis plan | model matches design; spatial and MET terms where needed | 10 |
+| Practicalities and risks | borders, data-quality rules, realistic risks | 10 |
+
+### Peer review questions
+
+1. Which factor is on which experimental unit? Is each tested against the right error?
+2. Does the map show blocks oriented sensibly relative to the gradient?
+3. Is the replication justified with numbers?
+4. Would you trust the simulation's assumptions? What would change the conclusion most?
+
+---
+
+## 🧑‍💻 Code-along Exercises
+
+1. Change the genetic SD (4) and G × E SD (2.5) in `simulate_trial()`. How does accuracy respond?
+2. Add a SpATS spatial model per site (Module 7) and combine the site BLUEs in a second stage. Does accuracy improve?
+3. Spend the same 288 plots as 1 replicate at 6 sites. Compare accuracy with the 2 reps × 3 sites design.
+
+---
+
+## 🧾 Sub-course Summary
+
+| Module | Big idea |
+|---|---|
+| 1 | Measure field heterogeneity; block along gradients; Smith's law. |
+| 2 | Randomize with seeds, map, analyse as designed. |
+| 3 | Two-way blocking with Latin squares and row–column designs. |
+| 4 | Split- and strip-plots have several error strata. |
+| 5 | α-designs keep blocks small and recover information. |
+| 6 | Augmented and p-rep designs for seed-limited trials. |
+| 7 | Spatial models capture what blocks miss. |
+| 8 | Environments, not plots, are the replicates for recommendations. |
+| 9 | Plan replication from CV and Δ; simulate complex designs; keep field books and quality flags. |
+| 10 | Simulate before sowing; judge designs by how well they recover the truth. |
+
+---
+
+## 🔗 Go Deeper
+
+- Main course: [Ch. 26 — Capstone: The Design Clinic](../../chapters/26-capstone-design-clinic.md)
+- Mixed models for breeding trials: [@smith2005; @piepho2003]
+
+<!-- REFS -->
+
+---
+
+[← Module 9](09-planning-field-trials.md) · [Sub-course home](README.md)

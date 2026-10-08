@@ -1,0 +1,394 @@
+key	doi	expect	theme	status	title	year	venue	cited_by
+hurlbert1984	10.2307/1942661	pseudoreplication	principles	OK	Pseudoreplication and the Design of Ecological Field Experiments	1984	Ecological Monographs	6063
+lazic2010	10.1186/1471-2202-11-5	pseudoreplication	neuroscience	OK	The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?	2010	BMC Neuroscience	320
+lazic2018	10.1371/journal.pbio.2005282	what exactly	principles	OK	What exactly is ‘N’ in cell culture and animal experiments?	2018	PLOS Biology	270
+button2013	10.1038/nrn3475	power failure	neuroscience	OK	Power failure: why small sample size undermines the reliability of neuroscience	2013	Nature Reviews Neuroscience	6468
+ioannidis2005	10.1371/journal.pmed.0020124	most published	reproducibility	OK	Why Most Published Research Findings Are False	2005	PLoS Medicine	8331
+begley2012	10.1038/483531a	raise standards	reproducibility	OK	Raise standards for preclinical cancer research	2012	Nature	2441
+prinz2011	10.1038/nrd3439-c1	believe it or not	reproducibility	OK	Believe it or not: how much can we rely on published data on potential drug targets?	2011	Nature Reviews Drug Discovery	1551
+baker2016	10.1038/533452a	reproducibility	reproducibility	OK	1,500 scientists lift the lid on reproducibility	2016	Nature	3480
+kilkenny2010	10.1371/journal.pbio.1000412	ARRIVE	reporting	OK	Improving Bioscience Research Reporting: The ARRIVE Guidelines for Reporting Animal Research	2010	PLoS Biology	6753
+percie2020	10.1371/journal.pbio.3000410	ARRIVE	reporting	OK	The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research	2020	PLOS Biology	5114
+landis2012	10.1038/nature11556	transparent reporting	reporting	OK	A call for transparent reporting to optimize the predictive value of preclinical research	2012	Nature	1099
+leek2010	10.1038/nrg2825	batch effects	omics	OK	Tackling the widespread and critical impact of batch effects in high-throughput data	2010	Nature Reviews Genetics	2044
+johnson2007	10.1093/biostatistics/kxj037	batch effects	omics	OK	Adjusting batch effects in microarray expression data using empirical Bayes methods	2007	Biostatistics	8162
+churchill2002	10.1038/ng1031	microarray	omics	OK	Fundamentals of experimental design for cDNA microarrays	2002	Nature Genetics	770
+kerr2001	10.1093/biostatistics/2.2.183	microarray	omics	OK	Experimental design for gene expression microarrays	2001	Biostatistics	498
+auer2010	10.1534/genetics.110.114983	RNA sequencing	omics	OK	Statistical Design and Analysis of RNA Sequencing Data	2010	Genetics	318
+conesa2016	10.1186/s13059-016-0881-8	RNA-seq	omics	OK	A survey of best practices for RNA-seq data analysis	2016	Genome Biology	2386
+schurch2016	10.1261/rna.053959.115	biological replicates	omics	OK	How many biological replicates are needed in an RNA-seq experiment and which differential expression tool should you use?	2016	RNA	858
+love2014	10.1186/s13059-014-0550-8	DESeq2	omics	OK	Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2	2014	Genome Biology	92252
+robinson2010	10.1093/bioinformatics/btp616	edgeR	omics	OK	"<tt>edgeR</tt>
+                    : a Bioconductor package for differential expression analysis of digital gene expression data"	2010	Bioinformatics	40697
+ritchie2015	10.1093/nar/gkv007	limma	omics	OK	limma powers differential expression analyses for RNA-sequencing and microarray studies	2015	Nucleic Acids Research	38412
+bh1995	10.1111/j.2517-6161.1995.tb02031.x	false discovery rate	statistics	OK	Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing	1995	Journal of the Royal Statistical Society Series B: Statistical Methodology	95625
+storey2003	10.1073/pnas.1530509100	genomewide	statistics	OK	Statistical significance for genomewide studies	2003	Proceedings of the National Academy of Sciences	8491
+squair2021	10.1038/s41467-021-25960-2	single-cell	omics	OK	Confronting false discoveries in single-cell differential expression	2021	Nature Communications	1054
+luecken2019	10.15252/msb.20188746	single-cell	omics	OK	Current best practices in single‐cell RNA‐seq analysis: a tutorial	2019	Molecular Systems Biology	2355
+barangale2018	10.1093/bfgp/elx035	single-cell	omics	OK	Experimental design for single-cell RNA sequencing	2018	Briefings in Functional Genomics	126
+hicks2018	10.1093/biostatistics/kxx053	single-cell	omics	OK	Missing data and technical variability in single-cell RNA-sequencing experiments	2018	Biostatistics	579
+tung2017	10.1038/srep39921	single-cell	omics	OK	Batch effects and the effective design of single-cell gene expression studies	2017	Scientific Reports	349
+visscher2017	10.1016/j.ajhg.2017.06.005	GWAS	genetics	OK	10 Years of GWAS Discovery: Biology, Function, and Translation	2017	The American Journal of Human Genetics	3639
+price2006	10.1038/ng1847	principal components	genetics	OK	Principal components analysis corrects for stratification in genome-wide association studies	2006	Nature Genetics	9339
+marees2018	10.1002/mpr.1608	genome-wide association	genetics	OK	A tutorial on conducting genome‐wide association studies: Quality control and statistical analysis	2018	International Journal of Methods in Psychiatric Research	812
+uffelmann2021	10.1038/s43586-021-00056-9	genome-wide association	genetics	OK	Genome-wide association studies	2021	Nature Reviews Methods Primers	1744
+daveysmith2003	10.1093/ije/dyg070	Mendelian randomization	genetics	OK	‘Mendelian randomization’: can genetic epidemiology contribute to understanding environmental determinants of disease?*	2003	International Journal of Epidemiology	5408
+sanderson2022	10.1038/s43586-021-00092-5	Mendelian randomization	genetics	OK	Mendelian randomization	2022	Nature Reviews Methods Primers	1918
+meuwissen2001	10.1093/genetics/157.4.1819	genome-wide dense marker	breeding	OK	Prediction of Total Genetic Value Using Genome-Wide Dense Marker Maps	2001	Genetics	6668
+gilmour1997	10.2307/1400446	natural and extraneous	breeding	OK	Accounting for Natural and Extraneous Variation in the Analysis of Field Experiments	1997	Journal of Agricultural, Biological, and Environmental Statistics	617
+cullis2006	10.1198/108571106X154443	early generation	breeding	OK	On the design of early generation variety trials with correlated data	2006	Journal of Agricultural, Biological, and Environmental Statistics	889
+boxwilson1951	10.1111/j.2517-6161.1951.tb00067.x	optimum conditions	optimization	OK	On the Experimental Attainment of Optimum Conditions	1951	Journal of the Royal Statistical Society Series B: Statistical Methodology	4044
+plackett1946	10.1093/biomet/33.4.305	multifactorial	optimization	OK	THE DESIGN OF OPTIMUM MULTIFACTORIAL EXPERIMENTS	1946	Biometrika	3154
+weissman2015	10.1021/op500169m	design of experiments	pharmacy	OK	Design of Experiments (DoE) and Process Optimization. A Review of Recent Publications	2015	Organic Process Research \& Development	524
+politis2017	10.1080/03639045.2017.1291672	design of experiments	pharmacy	OK	Design of experiments (DoE) in pharmaceutical development	2017	Drug Development and Industrial Pharmacy	522
+yu2014	10.1208/s12248-014-9598-3	quality by design	pharmacy	OK	Understanding Pharmaceutical Quality by Design	2014	The AAPS Journal	1301
+mandenius2008	10.1002/btpr.67	bioprocess	biotech	OK	Bioprocess optimization using design‐of‐experiments methodology	2008	Biotechnology Progress	395
+kumar2014	10.1002/btpr.1821	bioprocess	biotech	OK	Design of experiments applications in bioprocessing: Concepts and approach	2014	Biotechnology Progress	121
+zhang1999	10.1177/108705719900400206	statistical parameter	screening	OK	A Simple Statistical Parameter for Use in Evaluation and Validation of High Throughput Screening Assays	1999	SLAS Discovery	6369
+malo2006	10.1038/nbt1186	high-throughput screening	screening	OK	Statistical practice in high-throughput screening data analysis	2006	Nature Biotechnology	661
+birmingham2009	10.1038/nmeth.1351	RNA interference	screening	OK	Statistical methods for analysis of high-throughput RNA interference screens	2009	Nature Methods	530
+li2014mageck	10.1186/s13059-014-0554-4	MAGeCK	screening	OK	MAGeCK enables robust identification of essential genes from genome-scale CRISPR/Cas9 knockout screens	2014	Genome Biology	2744
+doench2018	10.1038/nrg.2017.97	CRISPR	screening	OK	Am I ready for CRISPR? A user's guide to genetic screens	2018	Nature Reviews Genetics	461
+bustin2009	10.1373/clinchem.2008.112797	MIQE	molbio	OK	The MIQE Guidelines: Minimum Information for Publication of Quantitative Real-Time PCR Experiments	2009	Clinical Chemistry	14678
+vandesompele2002	10.1186/gb-2002-3-7-research0034	normalization	molbio	OK	Accurate normalization of real-time quantitative RT-PCR data by geometric averaging of multiple internal control genes	2002	Genome Biology	16373
+livak2001	10.1006/meth.2001.1262	2-ΔΔCT	molbio	OK	Analysis of Relative Gene Expression Data Using Real-Time Quantitative PCR and the 2−ΔΔCT Method	2001	Methods	166042
+vaux2012	10.1038/embor.2012.36	replicates	principles	OK	Replicates and repeats—what is the difference and is it significant?	2012	The EMBO Reports	142
+cumming2007	10.1083/jcb.200611141	error bars	principles	OK	Error bars in experimental biology	2007	The Journal of Cell Biology	773
+blainey2014	10.1038/nmeth.3091	replication	principles	OK	Replication	2014	Nature Methods	200
+krzywinski2014design	10.1038/nmeth.2974	comparative experiments	principles	OK	Designing comparative experiments	2014	Nature Methods	20
+krzywinski2013power	10.1038/nmeth.2738	power	principles	OK	Power and sample size	2013	Nature Methods	195
+krzywinski2014blocking	10.1038/nmeth.3005	blocking	principles	OK	Analysis of variance and blocking	2014	Nature Methods	69
+salter2014	10.1186/s12915-014-0087-z	reagent	microbiology	OK	Reagent and laboratory contamination can critically impact sequence-based microbiome analyses	2014	BMC Biology	3164
+eisenhofer2019	10.1016/j.tim.2018.11.003	contamination	microbiology	OK	Contamination in Low Microbial Biomass Microbiome Studies: Issues and Recommendations	2019	Trends in Microbiology	1087
+knight2018	10.1038/s41579-018-0029-9	microbiome	microbiology	OK	Best practices for analysing microbiomes	2018	Nature Reviews Microbiology	1850
+gloor2017	10.3389/fmicb.2017.02224	compositional	microbiology	OK	Microbiome Datasets Are Compositional: And This Is Not Optional	2017	Frontiers in Microbiology	2939
+mcmurdie2014	10.1371/journal.pcbi.1003531	waste not	microbiology	OK	Waste Not, Want Not: Why Rarefying Microbiome Data Is Inadmissible	2014	PLoS Computational Biology	2724
+weiss2017	10.1186/s40168-017-0237-y	normalization	microbiology	OK	Normalization and microbial differential abundance strategies depend upon data characteristics	2017	Microbiome	1857
+sinha2017	10.1038/nbt.3981	microbiome	microbiology	OK	Assessment of variation in microbial community amplicon sequencing by the Microbiome Quality Control (MBQC) project consortium	2017	Nature Biotechnology	548
+lenski1991	10.1086/285289	long-term	microbiology	OK	Long-Term Experimental Evolution in Escherichia coli. I. Adaptation and Divergence During 2,000 Generations	1991	The American Naturalist	1474
+oberg2009	10.1021/pr8010099	proteomic	omics	OK	Statistical Design of Quantitative Mass Spectrometry-Based Proteomic Experiments	2009	Journal of Proteome Research	250
+aebersold2016	10.1038/nature19949	proteome	omics	OK	Mass-spectrometric exploration of proteome structure and function	2016	Nature	2328
+broadhurst2018	10.1007/s11306-018-1367-3	quality	omics	OK	Guidelines and considerations for the use of system suitability and quality control samples in mass spectrometry assays applied in untargeted clinical metabolomic studies	2018	Metabolomics	871
+dunn2011	10.1038/nprot.2011.335	metabolic profiling	omics	OK	Procedures for large-scale metabolic profiling of serum and plasma using gas chromatography and liquid chromatography coupled to mass spectrometry	2011	Nature Protocols	3112
+sumner2007	10.1007/s11306-007-0082-2	minimum reporting	omics	OK	Proposed minimum reporting standards for chemical analysis	2007	Metabolomics	5143
+wilkinson2016	10.1038/sdata.2016.18	FAIR	data	OK	The FAIR Guiding Principles for scientific data management and stewardship	2016	Scientific Data	15450
+sandve2013	10.1371/journal.pcbi.1003285	reproducible computational	computational	OK	Ten Simple Rules for Reproducible Computational Research	2013	PLoS Computational Biology	733
+weber2019	10.1186/s13059-019-1738-8	benchmarking	computational	OK	Essential guidelines for computational method benchmarking	2019	Genome Biology	186
+boulesteix2013	10.1371/journal.pone.0061562	neutral comparison	computational	OK	A Plea for Neutral Comparison Studies in Computational Sciences	2013	PLoS ONE	128
+mangul2019	10.1038/s41467-019-09406-4	benchmarking	computational	OK	Systematic benchmarking of omics computational tools	2019	Nature Communications	146
+varma2006	10.1186/1471-2105-7-91	cross-validation	datascience	OK	Bias in error estimation when using cross-validation for model selection	2006	BMC Bioinformatics	2100
+kapoor2023	10.1016/j.patter.2023.100804	leakage	datascience	OK	Leakage and the reproducibility crisis in machine-learning-based science	2023	Patterns	1113
+walsh2021	10.1038/s41592-021-01205-4	DOME	datascience	OK	DOME: recommendations for supervised machine learning validation in biology	2021	Nature Methods	259
+whalen2022	10.1038/s41576-021-00434-9	pitfalls	datascience	OK	Navigating the pitfalls of applying machine learning in genomics	2022	Nature Reviews Genetics	277
+chicco2017	10.1186/s13040-017-0155-3	machine learning	datascience	OK	Ten quick tips for machine learning in computational biology	2017	BioData Mining	727
+collins2015	10.7326/M14-0697	TRIPOD	medical	OK	Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis (TRIPOD): The TRIPOD Statement	2015	Annals of Internal Medicine	2860
+collins2024	10.1136/bmj-2023-078378	TRIPOD+AI	medical	OK	TRIPOD+AI statement: updated guidance for reporting clinical prediction models that use regression or machine learning methods	2024	BMJ	4037
+schulz2010	10.1136/bmj.c332	CONSORT	medical	OK	CONSORT 2010 Statement: updated guidelines for reporting parallel group randomised trials	2010	BMJ	8259
+chan2013	10.1136/bmj.e7586	SPIRIT	medical	OK	SPIRIT 2013 explanation and elaboration: guidance for protocols of clinical trials	2013	BMJ	4848
+vonelm2007	10.1016/S0140-6736(07)61602-X	STROBE	medical	OK	The Strengthening the Reporting of Observational Studies in Epidemiology (STROBE) statement: guidelines for reporting observational studies	2007	The Lancet	19141
+bossuyt2015	10.1136/bmj.h5527	STARD	medical	OK	STARD 2015: an updated list of essential items for reporting diagnostic accuracy studies	2015	BMJ	2968
+hernan2016	10.1093/aje/kwv254	target trial	medical	OK	Using Big Data to Emulate a Target Trial When a Randomized Trial Is Not Available: Table 1.	2016	American Journal of Epidemiology	3040
+thorlund2018	10.1136/bmj.k698	adaptive clinical trials	medical	OK	Key design considerations for adaptive clinical trials: a primer for clinicians	2018	BMJ	144
+woodcock2017	10.1056/NEJMra1510062	master protocols	medical	OK	Master Protocols to Study Multiple Therapies, Multiple Diseases, or Both	2017	New England Journal of Medicine	962
+julious2005	10.1002/pst.185	pilot	medical	OK	Sample size of 12 per group rule of thumb for a pilot study	2005	Pharmaceutical Statistics	2725
+faul2007	10.3758/BF03193146	G*Power	statistics	OK	G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences	2007	Behavior Research Methods	56404
+festing2002	10.1093/ilar.43.4.244	laboratory animals	animal	OK	Guidelines for the Design and Statistical Analysis of Experiments Using Laboratory Animals	2002	ILAR Journal	912
+macleod2015	10.1371/journal.pbio.1002273	risk of bias	animal	OK	Risk of Bias in Reports of In Vivo Research: A Focus for Improvement	2015	PLOS Biology	254
+clayton2014	10.1038/509282a	sex	animal	OK	Policy: NIH to balance sex in cell and animal studies	2014	Nature	1620
+beery2011	10.1016/j.neubiorev.2010.07.002	sex bias	neuroscience	OK	Sex bias in neuroscience and biomedical research	2011	Neuroscience \& Biobehavioral Reviews	1606
+voelkl2018	10.1371/journal.pbio.2003693	heterogeneity	animal	OK	Reproducibility of preclinical animal research improves with heterogeneity of study samples	2018	PLOS Biology	233
+richter2009	10.1038/nmeth.1312	standardization	animal	OK	Environmental standardization: cure or cause of poor reproducibility in animal experiments?	2009	Nature Methods	383
+eklund2016	10.1073/pnas.1602413113	cluster failure	neuroscience	OK	Cluster failure: Why fMRI inferences for spatial extent have inflated false-positive rates	2016	Proceedings of the National Academy of Sciences	3128
+poldrack2017	10.1038/nrn.2016.167	scanning the horizon	neuroscience	OK	Scanning the horizon: towards transparent and reproducible neuroimaging research	2017	Nature Reviews Neuroscience	1331
+marek2022	10.1038/s41586-022-04492-9	brain-wide association	neuroscience	OK	Reproducible brain-wide association studies require thousands of individuals	2022	Nature	2000
+kriegeskorte2009	10.1038/nn.2303	circular analysis	neuroscience	OK	Circular analysis in systems neuroscience: the dangers of double dipping	2009	Nature Neuroscience	2478
+nieuwenhuis2011	10.1038/nn.2886	interactions	neuroscience	OK	Erroneous analyses of interactions in neuroscience: a problem of significance	2011	Nature Neuroscience	716
+aarts2014	10.1038/nn.3648	dependency	neuroscience	OK	A solution to dependency: using multilevel analysis to accommodate nested data	2014	Nature Neuroscience	646
+nosek2018	10.1073/pnas.1708274114	preregistration	reproducibility	OK	The preregistration revolution	2018	Proceedings of the National Academy of Sciences	1518
+munafo2017	10.1038/s41562-016-0021	manifesto	reproducibility	OK	A manifesto for reproducible science	2017	Nature Human Behaviour	2424
+simmons2011	10.1177/0956797611417632	false-positive	reproducibility	OK	False-Positive Psychology	2011	Psychological Science	5231
+wasserstein2016	10.1080/00031305.2016.1154108	ASA Statement	statistics	OK	"The ASA Statement on
+                    <i>p</i>
+                    -Values: Context, Process, and Purpose"	2016	The American Statistician	5584
+halsey2015	10.1038/nmeth.3288	fickle	statistics	OK	The fickle P value generates irreproducible results	2015	Nature Methods	656
+errington2021	10.7554/eLife.71601	replicability	reproducibility	OK	Investigating the replicability of preclinical cancer biology	2021	eLife	275
+osc2015	10.1126/science.aac4716	reproducibility of psychological	reproducibility	OK	Estimating the reproducibility of psychological science	2015	Science	5629
+bates2015	10.18637/jss.v067.i01	lme4	statistics	OK	"Fitting Linear Mixed-Effects Models Using
+                    <b>lme4</b>"	2015	Journal of Statistical Software	78842
+rubin1974	10.1037/h0037350	causal effects	causal	OK	Estimating causal effects of treatments in randomized and nonrandomized studies.	1974	Journal of Educational Psychology	6688
+pearl2009	10.1214/09-SS057	causal inference	causal	OK	Causal inference in statistics: An overview	2009	Statistics Surveys	1783
+lakens2022	10.1525/collabra.33267	sample size justification	statistics	OK	Sample Size Justification	2022	Collabra: Psychology	1503
+altman1995	10.1136/bmj.311.7003.485	absence of evidence	statistics	OK	Statistics notes: Absence of evidence is not evidence of absence	1995	BMJ	1522
+bland1986	10.1016/S0140-6736(86)90837-8	agreement	statistics	OK	STATISTICAL METHODS FOR ASSESSING AGREEMENT BETWEEN TWO METHODS OF CLINICAL MEASUREMENT	1986	The Lancet	38476
+shalem2014	10.1126/science.1247005	CRISPR-Cas9 knockout	screening	OK	Genome-Scale CRISPR-Cas9 Knockout Screening in Human Cells	2014	Science	5048
+dixit2016	10.1016/j.cell.2016.11.038	Perturb-Seq	screening	OK	Perturb-Seq: Dissecting Molecular Circuits with Scalable Single-Cell RNA Profiling of Pooled Genetic Screens	2016	Cell	1978
+hart2015	10.1016/j.cell.2015.11.015	CRISPR screens	screening	OK	High-Resolution CRISPR Screens Reveal Fitness Genes and Genotype-Specific Cancer Liabilities	2015	Cell	1672
+sims2014	10.1038/nrg3642	sequencing depth	omics	OK	Sequencing depth and coverage: key considerations in genomic analyses	2014	Nature Reviews Genetics	1279
+ching2014	10.1261/rna.046011.114	power analysis	omics	OK	Power analysis and sample size estimation for RNA-Seq differential expression	2014	RNA	242
+hansen2011	10.1038/nbt.1910	biological variability	omics	OK	Sequencing technology does not eliminate biological variability	2011	Nature Biotechnology	178
+liu2014	10.1093/bioinformatics/btt688	more sequence	omics	OK	RNA-seq differential expression studies: more sequence or more replication?	2014	Bioinformatics	455
+argelaguet2018	10.15252/msb.20178124	multi-omics factor	omics	OK	Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets	2018	Molecular Systems Biology	1527
+hasin2017	10.1186/s13059-017-1215-1	multi-omics	omics	OK	Multi-omics approaches to disease	2017	Genome Biology	2796
+ziemann2016	10.1186/s13059-016-1044-7	gene name errors	computational	OK	Gene name errors are widespread in the scientific literature	2016	Genome Biology	137
+lander1989	10.1093/genetics/121.1.185	mendelian factors	genetics	OK	Mapping mendelian factors underlying quantitative traits using RFLP linkage maps.	1989	Genetics	3661
+mackay2009	10.1038/nrg2612	quantitative traits	genetics	OK	The genetics of quantitative traits: challenges and prospects	2009	Nature Reviews Genetics	1135
+cavanagh2008	10.1016/j.pbi.2008.01.002	MAGIC	breeding	OK	From mutations to MAGIC: resources for gene discovery, validation and delivery in crop plants	2008	Current Opinion in Plant Biology	430
+yu2006	10.1038/ng1702	mixed-model	genetics	OK	A unified mixed-model method for association mapping that accounts for multiple levels of relatedness	2006	Nature Genetics	3714
+crossa2017	10.1016/j.tplants.2017.08.011	genomic selection	breeding	OK	Genomic Selection in Plant Breeding: Methods, Models, and Perspectives	2017	Trends in Plant Science	1795
+hayes2009	10.3168/jds.2008-1646	dairy	breeding	OK	Invited review: Genomic selection in dairy cattle: Progress and challenges	2009	Journal of Dairy Science	1436
+araus2014	10.1016/j.tplants.2013.09.008	phenotyping	breeding	OK	Field high-throughput phenotyping: the new crop breeding frontier	2014	Trends in Plant Science	1681
+henderson1975	10.2307/2529430	best linear unbiased	breeding	OK	Best Linear Unbiased Estimation and Prediction under a Selection Model	1975	Biometrics	1953
+curtis2018	10.1111/bph.14153	experimental design	pharmacy	OK	Experimental design and analysis and their reporting II: updated and simplified guidance for authors and peer reviewers	2018	British Journal of Pharmacology	1265
+johnson2011	10.1021/bi201284u	Michaelis	biochemistry	OK	The Original Michaelis Constant: Translation of the 1913 Michaelis–Menten Paper	2011	Biochemistry	1277
+tipton2014	10.1016/j.pisc.2014.02.012	STRENDA	biochemistry	OK	Standards for Reporting Enzyme Data: The STRENDA Consortium: What it aims to do and why it should be helpful	2014	Perspectives in Science	86
+lee2018	10.1091/mbc.E17-05-0276	fluorescence imaging	molbio	OK	A beginner’s guide to rigor and reproducibility in fluorescence imaging experiments	2018	Molecular Biology of the Cell	70
+pillaikastoori2020	10.1016/j.ab.2020.113608	western	molbio	OK	A systematic approach to quantitative Western blot analysis	2020	Analytical Biochemistry	388
+horbach2017	10.1371/journal.pone.0186281	cell line	molbio	OK	The ghosts of HeLa: How cell line misidentification contaminates the scientific literature	2017	PLOS ONE	155
+freedman2015	10.1371/journal.pbio.1002165	economics	reproducibility	OK	The Economics of Reproducibility in Preclinical Research	2015	PLOS Biology	894
+landt2012	10.1101/gr.136184.111	ChIP-seq	omics	OK	ChIP-seq guidelines and practices of the ENCODE and modENCODE consortia	2012	Genome Research	1972
+moses2022	10.1038/s41592-022-01409-2	spatial transcriptomics	omics	OK	Museum of spatial transcriptomics	2022	Nature Methods	1308
+page2021	10.1136/bmj.n71	PRISMA	reporting	OK	The PRISMA 2020 statement: an updated guideline for reporting systematic reviews	2021	BMJ	92454
+morris2019	10.1002/sim.8086	simulation studies	computational	OK	Using simulation studies to evaluate statistical methods	2019	Statistics in Medicine	1252
+noble2009	10.1371/journal.pcbi.1000424	organizing	computational	OK	A Quick Guide to Organizing Computational Biology Projects	2009	PLoS Computational Biology	78
+yang2019	10.1038/s41592-019-0496-6	directed evolution	biotech	OK	Machine-learning-guided directed evolution for protein engineering	2019	Nature Methods	1098
+mead2012	10.1017/CBO9781139020879	design of experiments	books	OK	Statistical Principles for the Design of Experiments	2012	Cambridge University Press	109
+lazic2016	10.1017/9781139696647	laboratory biologists	books	OK	Experimental Design for Laboratory Biologists	2016	Cambridge University Press	44
+pallmann2018	10.1186/s12916-018-1017-7	adaptive designs	medical	OK	Adaptive designs in clinical trials: why use them, and how to run and report them	2018	BMC Medicine	704
+schulz2002	10.1016/s0140-6736(02)07750-4	allocation concealment	medical	OK	Allocation concealment in randomised trials: defending against deciphering	2002	The Lancet	760
+smucker2019	10.1038/s41592-019-0335-9	factorial	principles	OK	Two-level factorial experiments	2019	Nature Methods	17
+altman2015split	10.1038/nmeth.3293	split plot	principles	OK	Split plot design	2015	Nature Methods	71
+smucker2018optimal	10.1038/s41592-018-0083-2	optimal experimental design	principles	OK	Optimal experimental design	2018	Nature Methods	120
+gelman2014	10.1177/1745691614551642	beyond power	statistics	OK	Beyond Power Calculations	2014	Perspectives on Psychological Science	1116
+senn2004	10.1002/sim.2074	randomization	medical	OK	Controversies concerning randomization and additivity in clinical trials	2004	Statistics in Medicine	105
+kohavi2020	10.1017/9781108653985	online controlled	datascience	OK	Trustworthy Online Controlled Experiments	2020	Cambridge University Press	267
+piepho2006	10.1111/j.1439-0523.2006.01267.x	lattice	breeding	OK	On the use of multiple lattice designs and <i>α</i>‐designs in plant breeding trials	2006	Plant Breeding	37
+ruxton2016	10.1093/hesc/9780198717355.001.0001	experimental design	books	OK	Experimental Design for the Life Sciences	2016	Oxford University Press	13
+sena2010	10.1371/journal.pbio.1000344	publication bias	animal	OK	Publication Bias in Reports of Animal Stroke Studies Leads to Major Overstatement of Efficacy	2010	PLoS Biology	503
+steward2014	10.1016/j.neuron.2014.10.042	rigor	neuroscience	OK	Rigor or Mortis: Best Practices for Preclinical Research in Neuroscience	2014	Neuron	55
+huber2015	10.1038/nmeth.3252	bioconductor	computational	OK	Orchestrating high-throughput genomic analysis with Bioconductor	2015	Nature Methods	3662
+hopewell2025	10.1136/bmj-2024-081123	CONSORT	medical	OK	CONSORT 2025 statement: updated guideline for reporting randomised trials	2025	BMJ	1115
+ryan2016	10.1111/insr.12107	Bayesian	principles	OK	A Review of Modern Computational Algorithms for Bayesian Optimal Design	2016	International Statistical Review	267
+kass2016	10.1371/journal.pcbi.1004961	statistical practice	statistics	OK	Ten Simple Rules for Effective Statistical Practice	2016	PLOS Computational Biology	75
+bock2022	10.1038/s43586-021-00093-4	CRISPR	screening	OK	High-content CRISPR screening	2022	Nature Reviews Methods Primers	572
+barjoseph2012	10.1038/nrg3244	time-series	omics	OK	Studying and modelling dynamic biological processes using time-series gene expression data	2012	Nature Reviews Genetics	463
+lord2020	10.1083/jcb.202001064	SuperPlots	molbio	OK	SuperPlots: Communicating reproducibility and variability in cell biology	2020	Journal of Cell Biology	800
+huggett2013	10.1373/clinchem.2013.206375	digital	molbio	OK	The Digital MIQE Guidelines: Minimum Information for Publication of Quantitative Digital PCR Experiments	2013	Clinical Chemistry	813
+ghasemi2021	10.3390/ijms222312827	Assay	molbio	OK	The MTT Assay: Utility, Limitations, Pitfalls, and Interpretation in Bulk and Single-Cell Analysis	2021	International Journal of Molecular Sciences	1271
+seqc2014	10.1038/nbt.2957	comprehensive	omics	OK	A comprehensive assessment of RNA-seq accuracy, reproducibility and information content by the Sequencing Quality Control Consortium	2014	Nature Biotechnology	958
+candioti2014	10.1016/j.talanta.2014.01.034	Experimental	biotech	OK	Experimental design and multiple response optimization. Using the desirability function in analytical methods development	2014	Talanta	1025
+weusterbotz2000	10.1016/s1389-1723(01)80027-x	Experimental	biotech	OK	Experimental design for fermentation media development: Statistical design or global random search?	2000	Journal of Bioscience and Bioengineering	165
+noh2006	10.1002/bit.20803	Experimental	biotech	OK	Experimental design principles for isotopically instationary <sup>13</sup>C labeling experiments	2006	Biotechnology and Bioengineering	79
+keskin2016	10.3109/07388551.2014.973014	Experimental	biotech	OK	Experimental design methods for bioengineering applications	2016	Critical Reviews in Biotechnology	116
+gardossi2010	10.1016/j.tibtech.2010.01.001	Guidelines	biotech	OK	Guidelines for reporting of biocatalytic reactions	2010	Trends in Biotechnology	151
+mobley2013	10.1371/journal.pone.0063221	survey	reproducibility	OK	A Survey on Data Reproducibility in Cancer Research Provides Insights into Our Limited Ability to Translate Findings from the Laboratory to the Clinic	2013	PLoS ONE	142
+bustin2017	10.1111/eci.12801	Talking	molbio	OK	Talking the talk, but not walking the walk: RT-qPCR as a paradigm for the lack of reproducibility in molecular research	2017	European Journal of Clinical Investigation	113
+singh2005	10.1615/critrevtherdrugcarriersyst.v22.i1.20	Optimizing	pharmacy	OK	"Optimizing Drug Delivery Systems Using Systematic ""Design of Experiments."" Part I: Fundamental Aspects"	2005	Critical Reviews in Therapeutic Drug Carrier Systems	284
+mirzayi2021	10.1038/s41591-021-01552-x	Reporting	microbiology	OK	Reporting guidelines for human microbiome research: the STORMS checklist	2021	Nature Medicine	515
+kim2017	10.1186/s40168-017-0267-5	Optimizing	microbiology	OK	Optimizing methods and dodging pitfalls in microbiome research	2017	Microbiome	465
+laukens2016	10.1093/femsre/fuv036	Heterogeneity	microbiology	OK	Heterogeneity of the gut microbiome in mice: guidelines for optimizing experimental design	2016	FEMS Microbiology Reviews	365
+kennedy2023	10.1038/s41586-022-05546-8	Questioning	microbiology	OK	Questioning the fetal microbiome illustrates pitfalls of low-biomass microbial studies	2023	Nature	353
+lawson2019	10.1038/s41579-019-0255-9	Common	microbiology	OK	Common principles and best practices for engineering microbiomes	2019	Nature Reviews Microbiology	630
+curtis2022	10.1111/bph.15868	Planning	pharmacy	OK	Planning experiments: Updated guidance on experimental design and analysis and their reporting III	2022	British Journal of Pharmacology	510
+gamble2017	10.1001/jama.2017.18556	Guidelines	medical	OK	Guidelines for the Content of Statistical Analysis Plans in Clinical Trials	2017	JAMA	466
+huang2007	10.1038/sj.clpt.6100054	interaction	pharmacy	OK	Drug Interaction Studies: Study Design, Data Analysis, and Implications for Dosing and Labeling	2007	Clinical Pharmacology \& Therapeutics	288
+shebley2018	10.1002/cpt.1013	Physiologically	pharmacy	OK	Physiologically Based Pharmacokinetic Model Qualification and Reporting Procedures for Regulatory Submissions: A Consortium Perspective	2018	Clinical Pharmacology \& Therapeutics	382
+daetwyler2013	10.1534/genetics.112.147983	Genomic	breeding	OK	Genomic Prediction in Animals and Plants: Simulation of Data, Validation, Reporting, and Benchmarking	2013	Genetics	417
+sargeant2010	10.4315/0362-028x-73.3.579	REFLECT	breeding	OK	The REFLECT Statement: Reporting Guidelines for Randomized Controlled Trials in Livestock and Food Safety: Explanation and Elaboration	2010	Journal of Food Protection	75
+runcie2019	10.1534/g3.119.400598	Pitfalls	breeding	OK	Pitfalls and Remedies for Cross Validation with Multi-trait Genomic Prediction Methods	2019	G3 Genes|Genomes|Genetics	67
+pavan2020	10.3389/fgene.2020.00447	Recommendations	breeding	OK	Recommendations for Choosing the Genotyping Method and Best Practices for Quality Control in Crop Genome-Wide Association Studies	2020	Frontiers in Genetics	105
+skrivankova2021	10.1001/jama.2021.18236	Strengthening	genetics	OK	Strengthening the Reporting of Observational Studies in Epidemiology Using Mendelian Randomization	2021	JAMA	3859
+burgess2019	10.12688/wellcomeopenres.15555.3	Guidelines	genetics	OK	Guidelines for performing Mendelian randomization investigations: update for summer 2023	2023	Wellcome Open Research	676
+brion2013	10.1093/ije/dyt179	Calculating	genetics	OK	Calculating statistical power in Mendelian randomization studies	2013	International Journal of Epidemiology	1640
+yang2014	10.1038/ng.2876	Advantages	genetics	OK	Advantages and pitfalls in the application of mixed-model association methods	2014	Nature Genetics	992
+yu2008	10.1534/genetics.107.074245	Genetic	breeding	OK	Genetic Design and Statistical Power of Nested Association Mapping in Maize	2008	Genetics	976
+richards2015	10.1038/gim.2015.30	Standards	genetics	OK	Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology	2015	Genetics in Medicine	30114
+burgess2011	10.1093/ije/dyr036	Avoiding	genetics	OK	Avoiding bias from weak instruments in Mendelian randomization studies	2011	International Journal of Epidemiology	3762
+peterson2019	10.1016/j.cell.2019.08.051	Genome	genetics	OK	Genome-wide Association Studies in Ancestrally Diverse Populations: Opportunities, Methods, Pitfalls, and Recommendations	2019	Cell	776
+wray2013	10.1038/nrg3457	Pitfalls	genetics	OK	Pitfalls of predicting complex traits from SNPs	2013	Nature Reviews Genetics	685
+sham2014	10.1038/nrg3706	Statistical	genetics	OK	Statistical power and significance testing in large-scale genetic studies	2014	Nature Reviews Genetics	534
+spencer2009	10.1371/journal.pgen.1000477	Designing	genetics	OK	Designing Genome-Wide Association Studies: Sample Size, Power, Imputation, and the Choice of Genotyping Chip	2009	PLoS Genetics	510
+luecken2022	10.1038/s41592-021-01336-8	Benchmarking	omics	OK	Benchmarking atlas-level data integration in single-cell genomics	2022	Nature Methods	1497
+haghverdi2018	10.1038/nbt.4091	Batch	omics	OK	Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors	2018	Nature Biotechnology	2537
+maqc2006	10.1038/nbt1239	MicroArray	omics	OK	The MicroArray Quality Control (MAQC) project shows inter- and intraplatform reproducibility of gene expression measurements	2006	Nature Biotechnology	1719
+heumos2023	10.1038/s41576-023-00586-w	practices	omics	OK	Best practices for single-cell analysis across modalities	2023	Nature Reviews Genetics	1123
+simon2003	10.1093/jnci/95.1.14	Pitfalls	omics	OK	Pitfalls in the Use of DNA Microarray Data for Diagnostic and Prognostic Classification	2003	JNCI Journal of the National Cancer Institute	809
+svensson2017	10.1038/nmeth.4220	Power	omics	OK	Power analysis of single-cell RNA-sequencing experiments	2017	Nature Methods	584
+dupuy2007	10.1093/jnci/djk018	Critical	omics	OK	Critical Review of Published Microarray Studies for Cancer Outcome and Guidelines on Statistical Analysis and Reporting	2007	JNCI: Journal of the National Cancer Institute	502
+nygaard2016	10.1093/biostatistics/kxv027	Methods	omics	OK	Methods that remove batch effects while retaining group differences may lead to exaggerated confidence in downstream analyses	2016	Biostatistics	348
+zimmerman2021	10.1038/s41467-021-21038-1	practical	omics	OK	A practical solution to pseudoreplication bias in single-cell studies	2021	Nature Communications	318
+hart2013	10.1089/cmb.2012.0283	Calculating	omics	OK	Calculating Sample Size Estimates for RNA Sequencing Data	2013	Journal of Computational Biology	291
+zhang2020	10.1093/nargab/lqaa078	ComBat	omics	OK	ComBat-seq: batch effect adjustment for RNA-seq count data	2020	NAR Genomics and Bioinformatics	1485
+tran2020	10.1186/s13059-019-1850-9	benchmark	omics	OK	A benchmark of batch-effect correction methods for single-cell RNA sequencing data	2020	Genome Biology	1034
+alseekh2021	10.1038/s41592-021-01197-1	spectrometry	omics	OK	Mass spectrometry-based metabolomics: a guide for annotation, quantification and best reporting practices	2021	Nature Methods	1090
+addona2009	10.1038/nbt.1546	Multi	omics	OK	Multi-site assessment of the precision and reproducibility of multiple reaction monitoring–based measurements of proteins in plasma	2009	Nature Biotechnology	954
+collins2017	10.1038/s41467-017-00249-5	Multi	omics	OK	Multi-laboratory assessment of reproducibility, qualitative and quantitative performance of SWATH-mass spectrometry	2017	Nature Communications	557
+dunn2012	10.4155/bio.12.204	importance	omics	OK	The Importance of Experimental Design And Qc Samples in Large-Scale And Ms-Driven Untargeted Metabolomic Studies of Humans	2012	Bioanalysis	429
+nakayasu2021	10.1038/s41596-021-00566-6	Tutorial	omics	OK	Tutorial: best practices and considerations for mass-spectrometry-based protein biomarker discovery and validation	2021	Nature Protocols	275
+gatto2023	10.1038/s41592-023-01785-3	Initial	omics	OK	Initial recommendations for performing, benchmarking and reporting single-cell proteomics experiments	2023	Nature Methods	182
+kirwan2022	10.1007/s11306-022-01926-3	Quality	omics	OK	Quality assurance and quality control reporting in untargeted metabolic phenotyping: mQACC recommendations for analytical quality management	2022	Metabolomics	210
+lu2017	10.1146/annurev-biochem-061516-044952	Metabolite	omics	OK	Metabolite Measurement: Pitfalls to Avoid and Practices to Follow	2017	Annual Review of Biochemistry	436
+uklina2021	10.15252/msb.202110240	Diagnostics	omics	OK	Diagnostics and correction of batch effects in large‐scale proteomic studies: a tutorial	2021	Molecular Systems Biology	166
+kreutz2009	10.1111/j.1742-4658.2008.06843.x	Systems	systems	OK	Systems biology: experimental design	2009	The FEBS Journal	239
+mallick2017	10.1186/s13059-017-1359-z	Experimental	systems	OK	Experimental design and quantitative analysis of microbial community multiomics	2017	Genome Biology	173
+graw2021	10.1039/d0mo00041h	Multi	systems	OK	Multi-omics data integration considerations and study design for biological systems and disease	2020	Molecular Omics	214
+tiwari2021	10.15252/msb.20209982	Reproducibility	systems	OK	Reproducibility in systems biology modelling	2021	Molecular Systems Biology	130
+yu2023	10.1186/s13059-023-03047-z	Correcting	systems	OK	Correcting batch effects in large-scale multiomics studies using a reference-material-based ratio method	2023	Genome Biology	103
+raue2010	10.1063/1.3528102	Identifiability	systems	OK	Identifiability and observability analysis for experimental design in nonlinear dynamical models	2010	Chaos: An Interdisciplinary Journal of Nonlinear Science	129
+silk2014	10.1371/journal.pcbi.1003650	Model	systems	OK	Model Selection in Systems Biology Depends on Experimental Design	2014	PLoS Computational Biology	56
+chicco2023	10.1371/journal.pcbi.1011224	quick	systems	OK	Ten quick tips for avoiding pitfalls in multi-omics data integration analyses	2023	PLOS Computational Biology	45
+steiert2012	10.1371/journal.pone.0040052	Experimental	systems	OK	Experimental Design for Parameter Estimation of Gene Regulatory Networks	2012	PLoS ONE	69
+hatzis2014	10.1158/0008-5472.can-14-0725	Enhancing	screening	OK	Enhancing Reproducibility in Cancer Drug Screening: How Do We Move Forward?	2014	Cancer Research	102
+inglese2007	10.1038/nchembio0807-438	Reporting	screening	OK	Reporting data from high-throughput screening of small-molecule libraries	2007	Nature Chemical Biology	93
+krusche2019	10.1038/s41587-019-0054-x	practices	computational	OK	Best practices for benchmarking germline small-variant calls in human genomes	2019	Nature Biotechnology	438
+ye2019	10.1016/j.cell.2019.07.010	Benchmarking	computational	OK	Benchmarking Metagenomics Tools for Taxonomic Classification	2019	Cell	595
+vansmeden2019	10.1177/0962280218784726	Sample	datascience	OK	Sample size for binary logistic prediction models: Beyond events per variable criteria	2019	Statistical Methods in Medical Research	703
+vabalas2019	10.1371/journal.pone.0224365	Machine	datascience	OK	Machine learning algorithm validation with a limited sample size	2019	PLOS ONE	1784
+luo2016	10.2196/jmir.5870	Guidelines	datascience	OK	Guidelines for Developing and Reporting Machine Learning Predictive Models in Biomedical Research: A Multidisciplinary View	2016	Journal of Medical Internet Research	901
+nagendran2020	10.1136/bmj.m689	Artificial	datascience	OK	Artificial intelligence versus clinicians: systematic review of design, reporting standards, and claims of deep learning studies	2020	BMJ	960
+heil2021	10.1038/s41592-021-01256-7	Reproducibility	datascience	OK	Reproducibility standards for machine learning in the life sciences	2021	Nature Methods	246
+beam2020	10.1001/jama.2019.20866	Challenges	datascience	OK	Challenges to the Reproducibility of Machine Learning Models in Health Care	2020	JAMA	345
+mcdermott2021	10.1126/scitranslmed.abb1655	Reproducibility	datascience	OK	Reproducibility in machine learning for health research: Still a ways to go	2021	Science Translational Medicine	252
+hu2023	10.1016/j.neuroimage.2023.120125	Image	datascience	OK	Image harmonization: A review of statistical and deep learning methods for removing batch effects and evaluation metrics for effective harmonization	2023	NeuroImage	161
+liu2020	10.1038/s41591-020-1034-x	Reporting	medical	OK	Reporting guidelines for clinical trial reports for interventions involving artificial intelligence: the CONSORT-AI extension	2020	Nature Medicine	1223
+chan2004	10.1001/jama.291.20.2457	Empirical	medical	OK	Empirical Evidence for Selective Reporting of Outcomes in Randomized Trials	2004	JAMA	1424
+pocock2002	10.1002/sim.1296	Subgroup	medical	OK	Subgroup analysis, covariate adjustment and baseline comparisons in clinical trial reporting: current practiceand problems	2002	Statistics in Medicine	883
+whitehead2016	10.1177/0962280215588241	Estimating	medical	OK	Estimating the sample size for a pilot randomised trial to minimise the overall trial sample size for the external pilot and main trial for a continuous outcome variable	2016	Statistical Methods in Medical Research	1729
+begley2015	10.1161/circresaha.114.303819	Reproducibility	animal	OK	Reproducibility in Science	2015	Circulation Research	942
+kilkenny2009	10.1371/journal.pone.0007824	Survey	animal	OK	Survey of the Quality of Experimental Design, Statistical Analysis and Reporting of Research Using Animals	2009	PLoS ONE	689
+crawley1999	10.1016/s0006-8993(98)01258-x	Behavioral	animal	OK	Behavioral phenotyping of transgenic and knockout mice: experimental design and evaluation of general health, sensory functions, motor abilities, and specific behavioral tests1Published on the World Wide Web on 2 December 1998.1	1999	Brain Research	620
+holson1992	10.1016/0892-0362(92)90020-b	Principles	animal	OK	Principles and pitfalls in the analysis of prenatal treatment effects in multiparous species	1992	Neurotoxicology and Teratology	426
+botker2018	10.1007/s00395-018-0696-8	Practical	animal	OK	Practical guidelines for rigor and reproducibility in preclinical and clinical studies on cardioprotection	2018	Basic Research in Cardiology	395
+dale1999	10.1002/(sici)1097-0193(1999)8:2/3<109::aid-hbm7>3.0.co;2-w	Optimal	neuroscience	OK	Optimal experimental design for event-related fMRI	1999	Human Brain Mapping	1081
+woo2014	10.1016/j.neuroimage.2013.12.058	Cluster	neuroscience	OK	Cluster-extent based thresholding in fMRI analyses: Pitfalls and recommendations	2014	NeuroImage	1188
+nichols2017	10.1038/nn.4500	practices	neuroscience	OK	Best practices in data analysis and sharing in neuroimaging using MRI	2017	Nature Neuroscience	622
+desmond2002	10.1016/s0165-0270(02)00121-8	Estimating	neuroscience	OK	Estimating sample size in functional MRI (fMRI) neuroimaging studies: Statistical power analyses	2002	Journal of Neuroscience Methods	594
+yarkoni2009	10.1111/j.1745-6924.2009.01127.x	Correlations	neuroscience	OK	Big Correlations in Little Studies: Inflated fMRI Correlations Reflect Low Statistical Power—Commentary on Vul et al. (2009)	2009	Perspectives on Psychological Science	451
+szucs2020	10.1016/j.neuroimage.2020.117164	Sample	neuroscience	OK	Sample size evolution in neuroimaging research: An evaluation of highly-cited studies (1990–2012) and of latest practices (2017–2018) in high-impact journals	2020	NeuroImage	418
+gross2013	10.1016/j.neuroimage.2012.10.001	practice	neuroscience	OK	Good practice for conducting and reporting MEG research	2013	NeuroImage	721
+poldrack2008	10.1016/j.neuroimage.2007.11.048	Guidelines	neuroscience	OK	Guidelines for reporting an fMRI study	2008	NeuroImage	452
+odea2021	10.1111/brv.12721	Preferred	reporting	OK	"Preferred reporting items for systematic reviews and meta‐analyses in ecology and evolutionary biology: a
+                    <scp>PRISMA</scp>
+                    extension"	2021	Biological Reviews	668
+park2016	10.1093/bioinformatics/btw026	general experimental design	omics	OK	Differential methylation analysis for BS-seq data under general experimental design	2016	Bioinformatics	499
+crossley2008	10.1161/strokeaha.107.498725	bias in the design	animal	OK	Empirical Evidence of Bias in the Design of Experimental Stroke Studies	2008	Stroke	213
+patterson1976	10.1093/biomet/63.1.83	resolvable incomplete block	agri	OK	A new class of resolvable incomplete block designs	1976	Biometrika	495
+federer1975	10.2307/2529707	augmented designs	agri	OK	On Augmented Designs	1975	Biometrics	186
+smith1938	10.1017/s0021859600050516	empirical law	agri	OK	An empirical law describing heterogeneity in the yields of agricultural crops	1938	The Journal of Agricultural Science	338
+yates1935	10.2307/2983638	complex experiments	agri	OK	Complex Experiments	1935	Journal of the Royal Statistical Society Series B: Statistical Methodology	272
+piepho2003	10.1046/j.1439-037x.2003.00049.x	hitchhiker	agri	OK	A Hitchhiker's Guide to Mixed Models for Randomized Experiments	2003	Journal of Agronomy and Crop Science	316
+rodriguez2018	10.1016/j.spasta.2017.10.003	p-splines	agri	OK	Correcting for spatial heterogeneity in plant breeding experiments with P-splines	2018	Spatial Statistics	322
+murillo2021	10.21105/joss.03122	FielDHub	agri	OK	FielDHub: A Shiny App for Design of Experiments in Life Sciences	2021	Journal of Open Source Software	13
+kenward1997	10.2307/2533558	small sample inference	agri	OK	Small Sample Inference for Fixed Effects from Restricted Maximum Likelihood	1997	Biometrics	3910
+piepho2004	10.1198/1061860043515	letter-based	agri	OK	An Algorithm for a Letter-Based Representation of All-Pairwise Comparisons	2004	Journal of Computational and Graphical Statistics	456
+smith2005	10.1017/s0021859605005587	cultivar	agri	OK	The analysis of crop cultivar breeding and evaluation trials: an overview of current mixed model approaches	2005	The Journal of Agricultural Science	516
+mercer1911	10.1017/s002185960000160x	experimental error	agri	OK	The Experimental Error of Field Trials	1911	The Journal of Agricultural Science	152
+piepho1997	10.2307/2533976	multiplicative	agri	OK	Analyzing Genotype-Environment Data by Mixed Models with Multiplicative Terms	1997	Biometrics	195
+williams2011	10.1002/bimj.201000102	augmented p-rep	agri	OK	Augmented p-rep designs	2011	Biometrical Journal	122
+kuznetsova2017	10.18637/jss.v082.i13	lmerTest	agri	OK	"<b>lmerTest</b>
+                    Package: Tests in Linear Mixed Effects Models"	2017	Journal of Statistical Software	21901
+lenth2016	10.18637/jss.v069.i01	least-squares means	agri	OK	"Least-Squares Means: The
+                    <i>R</i>
+                    Package
+                    <b>lsmeans</b>"	2016	Journal of Statistical Software	5012
+desplot_cran	10.32614/cran.package.desplot	desplot	software	OK	desplot: Plotting Field Plans for Agricultural Experiments	2015	CRAN: Contributed Packages	0
+agridat_cran	10.32614/cran.package.agridat	agridat	software	OK	agridat: Agricultural Datasets	2011	CRAN: Contributed Packages	3
+agricolae_cran	10.32614/cran.package.agricolae	agricolae	software	OK	agricolae: Statistical Procedures for Agricultural Research	2006	CRAN: Contributed Packages	61
+emmeans_cran	10.32614/cran.package.emmeans	emmeans	software	OK	emmeans: Estimated Marginal Means, aka Least-Squares Means	2017	CRAN: Contributed Packages	2437
+laurent2024	10.48550/arXiv.2407.10362	LAB-Bench	aieval	OK	LAB-Bench: Measuring Capabilities of Language Models for Biology Research	2024	arXiv	0
+arora2025	10.48550/arXiv.2505.08775	HealthBench	aieval	OK	HealthBench: Evaluating Large Language Models Towards Improved Human Health	2025	arXiv	0
+zheng2023	10.48550/arXiv.2306.05685	LLM-as-a-Judge	aieval	OK	Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena	2023	arXiv	0
+rein2023	10.48550/arXiv.2311.12022	GPQA	aieval	OK	GPQA: A Graduate-Level Google-Proof Q&amp;A Benchmark	2023	arXiv	0
+himes2014	10.1371/journal.pone.0099625	CRISPLD2	omics	OK	RNA-Seq Transcriptome Profiling Identifies CRISPLD2 as a Glucocorticoid Responsive Gene that Modulates Cytokine Function in Airway Smooth Muscle Cells	2014	PLoS ONE	143
+wickham2014	10.18637/jss.v059.i10	tidy data	data	OK	Tidy Data	2014	Journal of Statistical Software	829
+broman2018	10.1080/00031305.2017.1375989	spreadsheets	data	OK	Data Organization in Spreadsheets	2018	The American Statistician	106
+lakens2017equivalence	10.1177/1948550617697177	equivalence tests	statistics	OK	Equivalence Tests	2017	Social Psychological and Personality Science	1939
+gebeyehu2026	10.1371/journal.pone.0355598	fenugreek	literature-designs	OK	Effect of inter- row spacing and seed rate on growth; Yield and yield components of fenugreek (Trigonella foenum - graecum L.) in Tehuledere district, Northeastern Ethiopia	2026	PLOS One	0
+kumar2026maize	10.3389/fpls.2026.1858657	maize	literature-designs	OK	Identification of stable and high-yielding maize genotypes using BLUP-based stability and multi-trait selection indices across diverse environments	2026	Frontiers in Plant Science	0
+makaju2026	10.3389/fpls.2026.1870120	tall fescue	literature-designs	OK	Forage yield stability of tall fescue genotypes across eight location-year combinations in the United States and Canada	2026	Frontiers in Plant Science	0
+kovi2026	10.1007/s00122-026-05371-x	timothy	literature-designs	OK	Genomic selection in timothy (Phleum pratense L.): a comprehensive evaluation of prediction models, multi-trait strategies, and forward validation across Norwegian environments	2026	Theoretical and Applied Genetics	0
+tao2026	10.3389/fvets.2026.1912675	lysophospholipid	literature-designs	OK	Effects oflysophospholipids supplementation on production performance, serum biochemistry, rumen fermentation in lactating dairy cows	2026	Frontiers in Veterinary Science	0
+galloni2026	10.1126/sciadv.aec9522	Arp2/3	literature-designs	OK	Distinct Arp2/3 isocomplexes drive axonal actin ring assembly and integrity	2026	Science Advances	0
+msi2026	10.1111/cas.70521	Musashi	literature-designs	OK	"Musashi‐1 Drives Radioresistance and Stemness in Head and Neck Squamous Cell Carcinoma via a Radioresistant
+                    <scp>FaDu</scp>
+                    Model"	2026	Cancer Science	0
+chen2026refgenes	10.3390/insects17090927	Reference Genes	literature-designs	OK	Selection and Validation of Candidate Reference Genes for qRT-PCR Analysis in Fopius arisanus	2026	Insects	0
+vps342026	10.3389/fimmu.2026.1936691	Vps34	literature-designs	OK	Podocyte Vps34 deficiency drives early-onset glomerulopathy and mesangial IgA-dominant immune-complex deposition: a novel mouse model linking vesicular trafficking to glomerular immune dysregulation	2026	Frontiers in Immunology	0
+mtb2026	10.1128/aac.01849-25	tuberculosis	literature-designs	OK	Strain diversity drives heterogeneous responses to tuberculosis combination therapy	2026	Antimicrobial Agents and Chemotherapy	1
+dex2026	10.2147/dddt.s625517	Dexmedetomidine	literature-designs	OK	Effects of Intranasal Dexmedetomidine on the Night Before Surgery on Postoperative Delirium in Elderly Patients Undergoing Total Knee/Hip Arthroplasty. A Parallel-Arm, Randomized Controlled, Non-Inferiority Trial	2026	Drug Design, Development and Therapy	0
+baltic2026	10.1001/jamanetworkopen.2026.12759	Barrier Precautions	literature-designs	OK	Extended Barrier Precautions vs Hand Hygiene Alone and Neonatal Sepsis in Intensive Care Patients	2026	JAMA Network Open	2
+blt2026	10.2147/nss.s606007	Bright Light	literature-designs	OK	Examining the Effects of Bright Light Therapy on Sleep and Resting-State Brain Activity in Parkinson’s Disease: A Randomized Crossover Pilot Study	2026	Nature and Science of Sleep	0
+ciprofol2026	10.2147/dddt.s604735	Respiratory Depression	literature-designs	OK	Comparison of Incidence of Respiratory Depression Between Ciprofol versus Propofol for Procedural Sedation During First-Trimester Surgical Abortion: A Randomized Controlled Trial	2026	Drug Design, Development and Therapy	0
+sts2026	10.1111/jcpe.70159	Periodontal	literature-designs	OK	"Local Sodium Tanshinone
+                    <scp>IIA</scp>
+                    Sulfonate Attenuates Periodontal Bone Loss by Modulating Inflammatory, Immune and Osteoclastogenic Signalling"	2026	Journal of Clinical Periodontology	0
+islet2026	10.1038/s44318-026-00744-w	pancreatic islets	literature-designs	OK	Deep single-cell decoding of human pancreatic islets reveals T2D β-cell gene expression defects	2026	The EMBO Journal	5
+smelt2026	10.3390/ani16182910	Salt Stress	literature-designs	OK	Transcriptome-Based Analysis of the Effects of Salt Stress on the Embryos of Hypomesus nipponensis	2026	Animals	0
+fireant2026	10.3390/insects17090971	Fire Ant	literature-designs	OK	Body Size-Related Thermal Acclimation and Underlying Gene Expression Mechanisms in Workers of the Red Fire Ant Solenopsis invicta	2026	Insects	0
+editing2026	10.1007/s44307-026-00123-w	RNA editing	literature-designs	OK	Short-read RNA-seq yields lower estimates of A-to-I RNA editing levels than long-read cDNA sequencing	2026	Advanced Biotechnology	0
+anoca2026	10.1136/bmjopen-2025-108799	angina	literature-designs	OK	Development and cross-site validation of machine-learning models for diagnosis and prognosis of stable angina with and without obstructive coronary artery disease: a study protocol	2026	BMJ Open	0
+spider2026	10.1002/ece3.74165	Wolf Spider	literature-designs	OK	Drought and Nitrogen Addition Modulate Wolf Spider‐Associated Responses in a Detrital Food Web Without Detectable Functional Cascades	2026	Ecology and Evolution	0
+saureus2026	10.7554/elife.107936	virulence	literature-designs	OK	Host and antibiotic jointly select for greater virulence in Staphylococcus aureus	2026	eLife	2
+cardinal2026	10.1038/s41598-026-42507-x	songbird	literature-designs	OK	Challenges associate with microbiome diversity, glucocorticoids, and condition in a wild songbird	2026	Scientific Reports	1
+puffin2026	10.1098/rsos.252018	seabird	literature-designs	OK	Age-related changes in the gut microbiota of a long-lived seabird suggest divergence from mammalian models	2026	Royal Society Open Science	0
+seagrass2026	10.1128/msphere.00431-26	seagrass	literature-designs	OK	Location and habitat specificity structure benthic microbial assemblages in a temperate seagrass ecosystem	2026	mSphere	0
+bwas2026	10.1111/psyp.70365	Brain Association	literature-designs	OK	Brain Association Studies in 2024: A Systematic Review of Sample Sizes and Preregistrations	2026	Psychophysiology	0
+sabv2026	10.1186/s13293-025-00788-3	biological variable	literature-designs	OK	Consideration of sex as a biological variable over the history of the 5xFAD Alzheimer’s Disease mouse model	2025	Biology of Sex Differences	3
+symmetry2026	10.1111/ejn.70608	Symmetry	literature-designs	OK	The Brain Response to Reflectional Symmetry Is Not Uniquely Preattentive	2026	European Journal of Neuroscience	0
+cortisol2026	10.1038/s41386-026-02505-z	Cortisol	literature-designs	OK	Cortisol suppression impairs retrieval of emotional memory and changes its neural correlates immediately and four days post-treatment	2026	Neuropsychopharmacology	0
+pcb2026	10.3389/ftox.2026.1816944	PCB 11	literature-designs	OK	Neurodevelopmental outcomes relevant to autism in juvenile mice exposed to PCB 11 in the maternal diet throughout gestation and lactation	2026	Frontiers in Toxicology	0
+striatum2026	10.1126/sciadv.aeb5352	striatum	literature-designs	OK	Indirect pathway neurons in the tail of the striatum regulate inhibitory control over sensory driven behavior	2026	Science Advances	0
+snr2026	10.1111/epi.18701	substantia nigra	literature-designs	OK	Restoring failed inhibition in the substantia nigra pars reticulata suppresses absence seizures in rats	2026	Epilepsia	1
+rtms2026	10.1162/imag.a.1231	transcranial magnetic	literature-designs	OK	Assessing the efficacy and reproducibility of four common repetitive transcranial magnetic stimulation protocols: A sham-controled study	2026	Imaging Neuroscience	0
+denseeeg2026	10.1162/imag.a.1245	dense sampling	literature-designs	OK	Towards precision EEG connectomics: Evaluating the benefits of dense sampling	2026	Imaging Neuroscience	0
+pvt2026	10.1038/s41467-026-73906-3	learned value	literature-designs	OK	A synaptic mechanism for encoding the learned value of action-derived safety	2026	Nature Communications	4
+blocking2026	10.1523/eneuro.0006-26.2026	Blocking	literature-designs	OK	Experimental Designs for Preclinical Neuroscience Experiments: Part 2—Blocking and Blocked Designs	2026	eneuro	0
+melanin2026	10.1186/s12934-026-03114-7	eumelanin	literature-designs	OK	Microbial production of eumelanin from a desert-derived Aspergillus terreus: statistical optimization, comprehensive characterization, and in silico insights into breast cancer-associated targets	2026	Microbial Cell Factories	0
+chitinase2026	10.1186/s13068-026-02808-9	chitinase	literature-designs	OK	Harnessing shrimp shell waste: enhanced chitinase production through optimization techniques for ecofriendly solutions using bacteria	2026	Biotechnology for Biofuels and Bioproducts	0
+eggshell2024	10.1186/s13036-024-00421-8	Eggshell	literature-designs	OK	Eggshell waste bioprocessing for sustainable acid phosphatase production and minimizing environmental hazards	2024	Journal of Biological Engineering	13
+schizo2026	10.3390/jof12050321	Schizophyllan	literature-designs	OK	Schizophyllan Optimization and Production in Submerged Cultures of Different Schizophyllum commune Isolates Collected in Thailand	2026	Journal of Fungi	1
+carotenoid2026	10.1007/s00253-026-13760-x	carotenoid	literature-designs	OK	Blue LED–assisted bioreactor cultivation enhances carotenoid accumulation in Rhodotorula mucilaginosa LB-01	2026	Applied Microbiology and Biotechnology	1
+lactic2026	10.1038/s41598-026-35828-4	lactic acid	literature-designs	OK	Nutrient-free biorefinery of corn steep water into lactic acid by Bacillus licheniformis OP16-2 under thermo-alkaline conditions with a pilot-scale assessment	2026	Scientific Reports	1
+fabhts2026	10.1007/s00449-026-03379-7	high-throughput screening	literature-designs	OK	Automated high-throughput screening combined with model-assisted analysis enables quantitative identification of process drivers and trade-offs during extracellular Fab production in Escherichia coli	2026	Bioprocess and Biosystems Engineering	0
+qbdscale2026	10.3390/pharmaceutics18040492	Scale-Up	literature-designs	OK	Quality by Design-Based Scale-Up and Industrial Development of Turmeric Extract-Loaded Nanostructured Lipid Carriers	2026	Pharmaceutics	4
+gasmeter2026	10.1007/s00449-026-03334-6	gas quantification	literature-designs	OK	Design and validation of an automated low-cost system for real-time gas quantification in bioreactors using pressure sensors	2026	Bioprocess and Biosystems Engineering	0
+rsmreview2026	10.3390/molecules31173055	Response Surface	literature-designs	OK	Response Surface Methodology for Biochar Performance Optimization: A Comprehensive Bibliometric Review	2026	Molecules	1
+lifecycledoe2024	10.3390/bioengineering11111089	Lifecycle DoE	literature-designs	OK	Lifecycle DoE—The Companion for a Holistic Development Process	2024	Bioengineering	1
+vonoprazan2026	10.3389/fphar.2026.1855889	Vonoprazan	literature-designs	OK	Bioequivalence study of vonoprazan fumarate tablets in healthy Chinese subjects: a randomized, open-label, two-period crossover trial	2026	Frontiers in Pharmacology	0
+omeprazole2026	10.1186/s40360-026-01203-2	omeprazole	literature-designs	OK	Pharmacokinetic and bioequivalence study of enteric-coated omeprazole capsule in healthy Chinese subjects under fasting and fed conditions	2026	BMC Pharmacology and Toxicology	0
+tamsulosin2026	10.3390/pharmaceutics18081008	Tamsulosin	literature-designs	OK	Bioequivalence, Food-Effect Assessment and Exploratory IVIVC of Two Extended-Release Tamsulosin 0.4 mg Formulations in Healthy Mexican Subjects	2026	Pharmaceutics	0
+timring2026	10.3390/pharmaceutics18040400	Biopharmaceutics	literature-designs	OK	TIM-1 and Tiny-TIM as Robust In Vitro Models for Oral Biopharmaceutics: Evidence from an International Ring Study	2026	Pharmaceutics	1
+pantoprazole2026	10.1186/s13065-026-01852-8	pantoprazole	literature-designs	OK	AQbD-driven RP-HPLC method for complete resolution of pantoprazole regioisomeric impurities with integrated multi-dimensional sustainability assessment	2026	BMC Chemistry	0
+nirogacestat2026	10.1186/s13065-026-01738-9	nirogacestat	literature-designs	OK	AQbD-driven development of a green RP-HPLC method for nirogacestat with LC–MS structural elucidation	2026	BMC Chemistry	2
+idarubicin2026	10.1371/journal.pone.0356906	idarubicin	literature-designs	OK	One-month physicochemical stability study of idarubicin prepared in polyolefin-type bags for the treatment of hematological diseases	2026	PLOS One	0
+meropenem2026	10.3390/pharmaceutics18080971	Meropenem	literature-designs	OK	Stability Study of Meropenem 50 mg/mL Eye Drops in Polypropylene Dropper Bottles	2026	Pharmaceutics	0
+adre2026	10.1371/journal.pone.0356480	adverse effects	literature-designs	OK	“A better system” – managing the adverse effects of prescribed medicines: Cluster-randomised controlled trial and process evaluation of the ADRe Profile in primary care	2026	PLOS One	0
+pharmrx2026	10.1136/bmjopen-2025-112886	pharmacist prescribing	literature-designs	OK	Effectiveness and safety of pharmacist prescribing: a systematic review	2026	BMJ Open	0
+bsf2026	10.1186/s12711-026-01088-z	black soldier fly	literature-designs	OK	Genetic parameters and pedigree–based selective breeding outcomes for productivity traits in industrial black soldier fly (hermetia illucens L.) production systems	2026	Genetics Selection Evolution	0
+rabbit2026	10.3390/ani16142192	Litter Size	literature-designs	OK	Genetic Parameter Estimation and Breeding Value Ranking for Litter Size Traits in Meat Rabbits: REML and Bayesian Inference Under Limited Data Conditions	2026	Animals	0
+disconnect2026	10.1111/jbg.12946	Disconnection	literature-designs	OK	Study of Genetic Progress in the Context of Disconnection Between Two Originally Connected Populations	2026	Journal of Animal Breeding and Genetics	1
+refset2026	10.3390/ani16030359	Reference Sets	literature-designs	OK	Leveraging Fst and Genetic Distance to Optimize Reference Sets for Enhanced Cross-Population Genomic Prediction	2026	Animals	1
+lacteff2026	10.1186/s12711-025-01013-w	lactation efficiency	literature-designs	OK	Interfacing mechanistic and breeding scheme simulation to predict selection response on lactation efficiency in dairy cows under different nutritional environments	2025	Genetics Selection Evolution	0
+p16ab2026	10.1080/19382014.2026.2706228	antibody validation	literature-designs	OK	"Importance of antibody validation in detecting cell cycle regulatory protein p16
+                    <sup>
+                      <b>INK4A</b>
+                    </sup>
+                    by immunohistochemistry on pancreas tissue"	2026	Islets	0
+biobank2026	10.1038/s41586-026-10830-y	organoid biobank	literature-designs	OK	A tumour-derived organoid biobank maps cancer gene dependencies	2026	Nature	5
+invivocrispr2026	10.1038/s41467-026-76293-x	metastasis suppressors	literature-designs	OK	In vivo CRISPR screening identifies metastasis suppressors in triple-negative breast cancer	2026	Nature Communications	0
+kif18a2026	10.1158/2767-9764.crc-26-0560	KIF18A	literature-designs	OK	Spindle Assembly Checkpoint Competency Determines Sensitivity to KIF18A Inhibition in Small Cell Lung Cancer	2026	Cancer Research Communications	0
+aopbattery2026	10.1016/j.namjnl.2026.100110	platin	literature-designs	OK	An AOP-guided in vitro platform for mechanistic screening of platinum-based nephrotoxicity	2026	NAM Journal	0
+obsuk2026	10.1136/bmjopen-2026-118723	Obstetric Bleeding	literature-designs	OK	Obstetric Bleeding Study UK (OBS UK): protocol for a stepped wedge cluster randomised trial investigating the clinical and cost-effectiveness of a maternity quality improvement programme to reduce excess bleeding and need for transfusion after childbirth	2026	BMJ Open	0
+sweicc2026	10.1016/j.ccrj.2026.100168	stepped wedge	literature-designs	OK	Sample size requirements and intra-cluster correlations for stepped wedge cluster randomised trials in intensive care medicine: A practical guide	2026	Critical Care and Resuscitation	0
+adaptive2026	10.1136/bmjopen-2025-115209	non-inferiority	literature-designs	OK	Multicentre, adaptive, double-blind, three-arm, placebo-controlled, non-inferiority trial examining antimicrobial prophylaxis duration in cardiac surgery (CALIPSO): trial protocol	2026	BMJ Open	0
+tte2026	10.1136/bmj-2025-086810	target trial emulation	literature-designs	OK	Concordance between target trial emulation and randomised controlled trials: systematic review and meta-analysis	2026	BMJ	6
+vpareview2026	10.3389/fphys.2026.1860596	valproic acid	literature-designs	OK	Prenatal valproic acid exposure in rodent models of autism: a systematic review of neurobehavioral physiological alterations	2026	Frontiers in Physiology	0
+quartet2026	10.1038/s41467-026-76380-z	Quartet	literature-designs	OK	Benchmarking RNA-seq with the Quartet and MAQC reference materials to establish best practices for accurate alternative splicing analysis	2026	Nature Communications	1
+assembly2026	10.1093/bib/bbag267	transcriptome assembly	literature-designs	OK	The impact of transcriptome assembly algorithms on downstream quantification in RNA-seq data analysis	2026	Briefings in Bioinformatics	0
+lrbench2026	10.1093/nargab/lqag070	benchmark	literature-designs	OK	A systematic benchmark of bioinformatics methods for single-cell and spatial RNA-seq nanopore long reads data	2026	NAR Genomics and Bioinformatics	1
+plexmaps2026	10.1038/s41597-026-07512-9	nonclinical species	literature-designs	OK	Quantitative transcriptome and proteome maps of classical nonclinical species	2026	Scientific Data	0
+spatial2026	10.1038/s41586-026-10452-4	spatial ecotypes	literature-designs	OK	Non-invasive profiling of the tumour microenvironment with spatial ecotypes	2026	Nature	21
+turbine2026	10.1002/ece3.74017	Wind Turbine	literature-designs	OK	Efficacy of Painting Wind Turbine Blades as a Mitigation Measure to Reduce Bird Collisions in a Mediterranean Wind Farm	2026	Ecology and Evolution	0
+pvremoval2026	10.3390/ani16132063	Photovoltaic	literature-designs	OK	Rapid Avian Diversity Recovery Following Photovoltaic Module Removal: Rebounds in Larger Waterbirds Composition and Habitat Restoration in Lake Littoral Areas	2026	Animals	0
+switchgrass2026	10.1111/nph.70313	switchgrass	literature-designs	OK	Local adaptation of both plant and pathogen: an arms‐race compromise in switchgrass rust	2025	New Phytologist	2
+redpanda2026	10.1002/ece3.74208	Red Pandas	literature-designs	OK	Temporal and Spatial Responses of Chinese Red Pandas to Anthropogenic Disturbance in Meigu Dafengding National Nature Reserve, Sichuan	2026	Ecology and Evolution	0
+chronoseq2026	10.1111/mec.70552	Restoration Plantings	literature-designs	OK	Restoration Plantings Promote Functional Recovery of Soil Fungi	2026	Molecular Ecology	0
